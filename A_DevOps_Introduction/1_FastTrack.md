@@ -56,3 +56,74 @@
           a. Code:  E2E CI/CD , building, testing, dev of OCI | pub/pri repo | git/lab/bitBucket/cloud integration |
           b. Build_pipeline: Trigger on commits, pull request | automated Builde & test.
           c. Deploy_pipeline: OKE_&_OKE_fn, Instances | Scalability ( Concurent Build ) | external(git)_&_internal_service(/VMs/Vault/OKE/) integration | Safe Deploy Stretergi | ++speed delivery | --Cost |
+          d. OCI Monitoring: tracks ( CPU, memory, network, response )
+          e. OCI Events Service → triggers actions/functions on events.
+          f. OCI Logging → stores application/system logs.
+          g. OCI Notifications → sends alerts on anomalies.
+          h. Proactive anomaly detection & performance tuning.
+
+====================================================================================================================================
+
+# OCI Cloud Native Development – Vision Stays Case Study Summary
+
+====================================================================================================================================
+
+## CASE
+
+    -  Requirment:static website -> booking functionality + third-party integration API's
+    -  Solution: for scalability, agility, and maintainability Migration to OCI Cloud Native Architecture.
+
+## Migration & Hosting
+
+    - Static -> OCI instance.( HOST - Frontend,Media ) + Performance.
+    - Load Balancer -> request Distribution in backend VM's + SSL termination, Session Persistency , Routing.
+    - IAM Policies -> Secure Access | Roles | Privileges | Tracking.
+
+## Transition -> Cloud_Native
+
+    - Microservices => centered app -> microservice | improve scalability.
+    - Containerization => Kubernetes (OKE) -> Auto Scalling.
+    - Serverless fn() => OCI fun + event driven task.
+    - Storage => img/Artifact -> Container_&_atrifact Registry | security.
+
+## Integration & API Management
+
+    - API Gateway -> Centralized access + microservice | Authenticat + Authorization, rate Limiting, routing.
+    - Auto DB (SERVERLESS MICROSERVICE) -> persistencey | self-driven (scalling , patching).
+    - WAF ( Web App Firewall ) -> OWASP_vulnerablity Protections.
+
+## DevOps Automation
+
+## DevOps Automation => CICD | Templates | Rolling Updates | blue-green deployments
+
+## Advanced Architecture Features
+
+    - OCI Service Mesh(microservice management )
+    - OCI Logging & Notifications(Logging management + alert)
+    - OCI Vault (Encrypt + Manage) credentials.
+
+====================================================================================================================================
+
+# CaseStudy: Architecture on OCI DevOps Infra
+
+====================================================================================================================================
+
+## Core :
+
+### Microservices: 1. Costumer (Costumer Info) 2. Business ( Bus. Info ) 3. Booking/(3rd party handle) | >>> Each containerized (OKE) + Deployed.
+
+## Integration & Access:
+
+    - SERVERLESS : Hotel Details.
+    - API : Control secure Backend.
+    - DB : OCI DB = JSON
+    - Notifications & Messaging: Admin and user (email/message).
+    - OCI Vault: sensitive Cred.
+
+## Frontend & Networking: VM Hosting | Load Balancer | OCI - Web App Firewall.
+
+## DevOps Implementation: OCI repo | CICD | push/commit -build triggers | Pipelines | Blue-Green & canary build -> no downtime.
+
+## Monitoring_Observation:
+
+====================================================================================================================================
