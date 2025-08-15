@@ -4,18 +4,16 @@
 
 ===================================================================================================================================================
 
-## Definition & Core Concept
+## Definition & Core Concept = microservice = 1. independent deployable services >communication> APIs (HTTP, gRPC, TCP/UDP) => independent development-deployment, scaling, and fault isolation.
 
     - Microservices = Decompose application functionality into
-            1. independent
-            2. deployable
-            3. services
+            1. independent deployable services
         communicating via
-            4. APIs (HTTP, gRPC, TCP/UDP).
+            2. APIs (HTTP, gRPC, TCP/UDP).
         Enableing
-            5. independent development, deployment, scaling, and fault isolation.
+            3. independent development-deployment, scaling, and fault isolation.
 
-## Key Characteristics
+## Key Characteristics = LooseCouple= isolation+repari without affecting other | Indipendent Deploy | PolyGlot (different lang per service) | service vise scabality | policies to save falure of service.
 
     1. Loose coupling → Isolate services, address slowdowns without affecting others.
     2. Independent deployability → Change/redeploy only the affected service.
@@ -41,3 +39,7 @@
    Maintainability Easier Complex
    Resilience High Low
    Scalability Independent per service Whole app only
+
+## Definition & Core Concept = microservice = 1. independent deployable services >communication> APIs (HTTP, gRPC, TCP/UDP) => independent development-deployment, scaling, and fault isolation.
+
+## Key Characteristics = LooseCouple= isolation+repari without affecting other | Indipendent Deploy | PolyGlot (different lang per service) | service vise scabality | policies to save falure of service.
