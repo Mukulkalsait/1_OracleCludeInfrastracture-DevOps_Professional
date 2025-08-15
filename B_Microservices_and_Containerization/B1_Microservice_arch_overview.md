@@ -28,17 +28,18 @@
     Data Store Layer – Separate persistence for each service (decentralized databases).
     Containerization & Orchestration – Each service in its own container; managed by Kubernetes or similar.
 
-4. Microservices vs. Monolithic Architecture
-   Aspect Microservices Monolithic
-   Unit Design Loosely coupled services Single unit
-   Functionality Reuse API-driven Limited
-   Communication REST/gRPC Internal function calls
-   Tech Flexibility Multiple languages One language
-   Data Management Decentralized DB Centralized DB
-   Deployment Independent All-at-once
-   Maintainability Easier Complex
-   Resilience High Low
-   Scalability Independent per service Whole app only
+## Microservices vs. Monolithic Architecture
+
+    ASPECT                  MICROSERVICES                   MONOLITHIC
+    UNIT DESIGN             Loosely coupled services        Single unit
+    FUNCTIONALITY REUSE     API-driven                      Limited
+    COMMUNICATION           REST/gRPC                       Internal function calls
+    TECH FLEXIBILITY        Multiple languages              One language
+    DATA MANAGEMENT         Decentralized DB                Centralized DB
+    DEPLOYMENT              Independent                     All-at-once
+    MAINTAINABILITY         Easier                          Complex
+    RESILIENCE              High                            Low
+    SCALABILITY             Independent per service         Whole app only
 
 ## Definition & Core Concept = microservice = 1. independent deployable services >communication> APIs (HTTP, gRPC, TCP/UDP) => independent development-deployment, scaling, and fault isolation.
 
