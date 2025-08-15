@@ -42,3 +42,17 @@
 ## Benefits of DevOps=> HIGI - Connection, engagement & colab | ++quality ++fastIssueResolv ++stability ++release ++flexibility ++innovation ++Predictability | --Cost --time |
 
 ====================================================================================================================================
+
+# OCI DevOps Service – Key Points for Development & Examination
+
+====================================================================================================================================
+
+## DevOps Cloud => Cloud-Centric Auto. | pub/pri reop + CI/CD | --cost | ++governance ++control | Pipelines for => ( code_management | bug Tracking | Auto Testing | Deploy | Monitor )
+
+## DevOps Cloud Benefits => --Time --Effort | no infra setup + pre_build Solutions=MicroService | ++colab | Automate full DevOps Cycle | --cost (devlop,test,deploy,operation) | ++Tracking of cost.
+
+## OCI Services =>
+
+          a. Code:  E2E CI/CD , building, testing, dev of OCI | pub/pri repo | git/lab/bitBucket/cloud integration |
+          b. Build_pipeline: Trigger on commits, pull request | automated Builde & test.
+          c. Deploy_pipeline: OKE_&_OKE_fn, Instances | Scalability ( Concurent Build ) | external(git)_&_internal_service(/VMs/Vault/OKE/) integration | Safe Deploy Stretergi | ++speed delivery | --Cost |
