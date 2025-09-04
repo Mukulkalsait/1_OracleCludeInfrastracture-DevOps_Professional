@@ -23,8 +23,6 @@
 
 ## Dev Side: PCBT
 
-rajat
-
 1. Plan – Requirements, backlog, sprint planning.
 2. Code – Develop features & fixes.
 3. Build – Compile.

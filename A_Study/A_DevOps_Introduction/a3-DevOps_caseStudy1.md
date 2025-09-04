@@ -1,7 +1,5 @@
 # OCI Cloud Native Development – Vision Stays Case Study Summary
 
-# mukul
-
 ## CASE
 
     -  Requirment:static website -> booking functionality + third-party integration API's
