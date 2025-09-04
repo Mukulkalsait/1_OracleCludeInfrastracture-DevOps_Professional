@@ -17,9 +17,9 @@
     $DEV: tight deadlines (code/bugfix, slow release) vs $OPS: resource content, constant redesign,rapid issue resolvement, customer demands |
     $DEV Wants frequent changes $OPS Wants Stability.
 
-## What is DevOps? = continous delivery | collab dev+ops | Automation + programmable infra | fast release | ++quality | Agile+lean+os oreanted. | Rapid Delivary.
+## What is DevOps? = continous delivery | collabaration dev+ops | Automation + programmable infra | fast release | ++quality | Agile+lean+OS oreanted. | Rapid Delivery.
 
-## Why DevOps Matters => Unifide Infra & Workflow | + productivity, +Efficiency, +security | Dynamic Lifecycle | low error-> reduce reword | release frequency
+## Why DevOps Matters => Unifide Infra & Workflow | + productivity, +Efficiency, +security | Dynamic Life Cycle | low error-> reduce reword | release frequency
 
 ## Dev Side: PCBT
 

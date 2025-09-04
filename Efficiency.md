@@ -5,25 +5,6 @@ Here’s the **most efficient approach** for you, with a **CLI-first + TUI tools
 
 ---
 
-## 🐧 WSL Optimization
-
-1. **Limit WSL Memory Usage**  
-   Create/edit file:
-   ```ini
-   %UserProfile%\.wslconfig
-   ```
-
-[wsl2]
-memory=6GB
-processors=4
-swap=8GB
-
-👉 This ensures Docker/K8s don’t eat all your RAM.
-
-    Use Lightweight Linux Distro in WSL
-        Ubuntu (recommended)
-        Debian (lighter than Ubuntu)
-
 🐳 Docker CLI + TUIs
 
     Docker CLI → default and most efficient.
