@@ -49,6 +49,8 @@
 
 ## DevOps Cloud => Cloud-Centric Auto. | pub/pri reop + CI/CD | --cost | ++governance ++control | Pipelines for => ( code_management | bug Tracking | Auto Testing | Deploy | Monitor )
 
+→ it installs drivers automatically.
+
 ## DevOps Cloud Benefits => --Time --Effort | no infra setup + pre_build Solutions=MicroService | ++colab | Automate full DevOps Cycle | --cost (devlop,test,deploy,operation) | ++Tracking of cost.
 
 ## OCI Services =>
