@@ -2,30 +2,51 @@
 
 ## running:
 
-`docker run 
-        -d = dittach 
-        --name = myredis 
-redis`
+```bash
+docker run /
+        -d / = dittach
+        --name / = myredisdatabase
+        redis
+```
 
 ## geting in terminal:
 
-`docker
-    exec = exicute
-    -it  = interactive 
-    myredis [name of contianer]
-    redis-cli [cmd]`
+```bash
+docker /
+    exec / = exicute
+    -it / = interactive
+    myredisdatabase / [name of contianer]
+    redis-cli [cmd]
 
-## inside redis do your work:
+```
 
-SET name "mukuldk"
-GET name
-=> "mukuldk"
+## create network
 
-INCR counter (incriment the variable counter)
-GET counter
-=> "1"
-INCR counter (incriment the variable counter)
-INCR counter (incriment the variable counter)
-INCR counter (incriment the variable counter)
-GET counter
-=> "4"
+```bash
+docker network create appNet
+```
+
+ <!-- Y:   repeat run -->
+
+```bash
+docker run -d --name myredisdatabase --network appNet redis
+```
+
+## Docker running:
+
+#### persistance data.
+
+```bash
+docker run -d --name myredis -v redis_data:/data redis redis-server --appendonly yes`
+```
+
+      -v redis_data:/data = persistentData
+      --appendonly yes = durability mode (AOF log).
+
+#### interactive | auto remove | temperory
+
+```bash
+docker run -it --rm redis redis-cli -h host.docker.internal
+```
+
+      --rm means auto-remove after exit
