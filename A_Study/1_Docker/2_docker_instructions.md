@@ -2,23 +2,78 @@
 
 ```lua
   FROM Create a new build stage from a base image.
+  SHELL Set the default shell of an image.
   RUN Execute build commands.
-  WORKDIR Change working directory.
-ADD Add local or remote files and directories.
+  WORKDIR Change working directory Default for => { RUN,CMD,ADD,COPY,ENTRYPOINT } commands
+ *USER Set "User" and "group IDs". [default => root] *(RUN adduser -D mukuldk)
+  ENV Set environment variables key=value key=value (for next line use " \ ")
+  COPY Copy files and directories.
+  ADD Add local or remote files and directories.
+  EXPOSE Describe which ports your application is listening on. to check => [docker inspect mynewimg - -format="{{json.Config.ExposedPorts}/"{"5000/tcp:{}"}]
+
+  VOLUME Create volume mounts.
+  LABEL Add metadata to an image. {key=val} {Writer=mukuldk}
+
+  -- DX: This 2 commands can be Override in direct "Docker Run"
+  ENTRYPOINT Specify default executable. -- G: ["nmp"], ["pnpm"] , ["/bin/sh"]? ,
+  CMD Specify default commands. -- G: ["exicutable","arg1","arg2"]
+
+
+
 ARG Use build-time variables.
-CMD Specify default commands.
-COPY Copy files and directories.
-ENTRYPOINT Specify default executable.
-ENV Set environment variables.
-EXPOSE Describe which ports your application is listening on.
 HEALTHCHECK Check a containers health on startup.
-LABEL Add metadata to an image.
 MAINTAINER Specify the author of an image.
 ONBUILD Specify instructions  for_when the image is used in a build.
-SHELL Set the default shell of an image.
 STOPSIGNAL Specify the system call signal for_exiting a container.
-USER Set user and group IDs.
-VOLUME Create volume mounts.
+```
+
+# DOCKER FILE =>
+
+```rust
+FROM alpine:3.18
+SHELL ["/bin/sh","-c"] # default
+SHELL ["pwsh","-command"] # for windows
+
+RUN apk add curl
+WORKDIR /downloads
+
+RUN adduser -D mukuldk
+USER mukuldk[:wheel]
+
+ENV eSECRET_API_KEY=75C57EA3C2B5C5EA \
+ url=https://vihaanaitech.com/main/Apis/app_key_verify.php \
+ eVERIFICATION_KEY=8A9AB63614582D29
+
+ENV app_host="0.0.0.0"
+ENV sys_host="5.5.5.5"
+ENV app_port=5000
+
+COPY . . (everythign from . to new . => WORKDIR )
+COPY app.sh /downloads/ (absolute path)
+ADD . .
+ADD https://github.com/Mukulkalsait/nvim /home/mukuldk/.config/
+
+EXPOSE 3000  (+ use in => docker run -it -p 8080:3000 myimg )
+EXPOSE 5000
+
+VOLUME
+LABEL CREATER="mukuldk"
+
+
+CMD ["bun","start"]
+ or
+ENTRYPOINT  ["bun"] or ["pnpm"]
+CMD ["start"]
+ or
+ENTRYPOINT  ["sleep"]
+CMD ["5"]
+
+// DX: OVERRIDING ( ENTRYPOING + CMD )
+// Y: =>  docker run -it -d -p 8080:3000 myimg npm i
+
+
+
+
 ```
 
 ## Core Concepts
@@ -41,7 +96,9 @@ You already know the most common ones. Here’s a deeper list:
 <!-- Y: Basic-->
 
 - `docker run <name> <any COMMAND of os> atribute` -> directly pass COMMAND inside the os.
+  docker run myimg { pwd || cat index.html || apt add curl || uname -a || cat /etc/os-release }
 - `--name <name>` → Name container.
+- `<name> env` -> show total env set in file.
 
 - `-d, --detach` → Run in background.
 - `-i` → Keep STDIN open && `-t` → Allocate TTY (usually used as `-it`).
