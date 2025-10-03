@@ -1,7 +1,9 @@
 ## Dockerfile:
 
 ```lua
-FROM Create a new build stage from a base image.
+  FROM Create a new build stage from a base image.
+  RUN Execute build commands.
+  WORKDIR Change working directory.
 ADD Add local or remote files and directories.
 ARG Use build-time variables.
 CMD Specify default commands.
@@ -13,12 +15,10 @@ HEALTHCHECK Check a containers health on startup.
 LABEL Add metadata to an image.
 MAINTAINER Specify the author of an image.
 ONBUILD Specify instructions  for_when the image is used in a build.
-RUN Execute build commands.
 SHELL Set the default shell of an image.
 STOPSIGNAL Specify the system call signal for_exiting a container.
 USER Set user and group IDs.
 VOLUME Create volume mounts.
-WORKDIR Change working directory.
 ```
 
 ## Core Concepts
@@ -38,33 +38,53 @@ If you want to go **deep** (DevOps-level mastery), you’ll need to cover:
 
 You already know the most common ones. Here’s a deeper list:
 
+<!-- Y: Basic-->
+
+- `docker run <name> <any COMMAND of os> atribute` -> directly pass COMMAND inside the os.
 - `--name <name>` → Name container.
+
 - `-d, --detach` → Run in background.
-- `-i` → Keep STDIN open.
-- `-t` → Allocate TTY (usually used as `-it`).
+- `-i` → Keep STDIN open && `-t` → Allocate TTY (usually used as `-it`).
+
 - `--rm` → Remove container on exit.
-- `-v, --volume <host:container>` → Mount a volume.
-- `--mount type=bind|volume|tmpfs,...` → More advanced mounting.
+
 - `-p, --publish hostPort:containerPort` → Publish container ports.
+
 - `--network <network>` → Attach to a network.
-- `--network-alias <alias>` → Alias inside custom networks.
+
+<!-- IMP: USED IMP -->
+
 - `-e, --env KEY=VALUE` → Set env vars.
 - `--env-file <file>` → Load env vars from file.
-- `--cpus <n>` → Limit CPU usage.
-- `-m, --memory <bytes>` → Limit memory usage.
-- `--restart no|on-failure|always|unless-stopped` → Restart policy.
-- `--privileged` → Give full access to host (dangerous).
-- `--cap-add / --cap-drop` → Add/remove Linux capabilities.
-- `--user <uid:gid>` → Run as a different user.
-- `--workdir <dir>` → Set working directory.
-- `--entrypoint <command>` → Override default entrypoint.
-- `--health-cmd`, `--health-interval`, `--health-retries`, `--health-timeout` → Health checks.
-- `--log-driver`, `--log-opt` → Configure logging.
-- `--device <hostDev:containerDev>` → Give container access to host device (e.g. GPU).
-- `--gpus all|<count>` → Run with GPU access (NVIDIA).
+
+- `-v, --volume <host:container>` → Mount a volume.
+- `--mount type=bind|volume|tmpfs,...` → More advanced mounting.
+
+- `--network-alias <alias>` → Alias inside custom networks.
 - `--ipc` → Share IPC namespace.
 - `--pid` → Share PID namespace.
 - `--hostname` → Set hostname.
+
+- `--workdir <dir>` → Set working directory.
+
+<!-- G: Optimese -->
+
+- `--cpus <n>` → Limit CPU usage.
+- `-m, --memory <bytes>` → Limit memory usage.
+- `--restart no|on-failure|always|unless-stopped` → Restart policy.
+- `--health-cmd`, `--health-interval`, `--health-retries`, `--health-timeout` → Health checks.
+- `--log-driver`, `--log-opt` → Configure logging.
+
+<!-- DX: Addvanced Privilegeds -->
+
+- `--privileged` → Give full access to host (dangerous).
+- `--user <uid:gid>` → Run as a different user.
+
+- `--entrypoint <command>` → Override default entrypoint.
+- `--device <hostDev:containerDev>` → Give container access to host device (e.g. GPU).
+- `--gpus all|<count>` → Run with GPU access (NVIDIA).
+
+- `--cap-add / --cap-drop` → Add/remove Linux capabilities.
 
 👉 Pro tip: run `docker run --help` for **all 100+ flags**.
 
