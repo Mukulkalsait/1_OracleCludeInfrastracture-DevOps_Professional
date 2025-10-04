@@ -10,8 +10,8 @@
 
 ### 🔹 Linux distros
 
-- `alpine:3.20` → \~5 MB (tiny, musl libc, sometimes compatibility issues with glibc apps).
-- `debian:bookworm-slim` → \~22 MB (good balance, stable + secure).
+- `alpine:3.20` → \~5 MB (tiny, musl libc, sometimes compatibility issues with glibc apps). [apk add]
+- `debian:bookworm-slim` → \~22 MB (good balance, stable + secure). [apt-get]
 - `ubuntu:24.04` → \~29 MB for `slim`, \~70 MB for full (large, but has everything).
 
 👉 Most companies use **Debian Slim** unless they really want **Alpine** for size.
