@@ -14,9 +14,10 @@
   VOLUME Create volume mounts.
   LABEL Add metadata to an image. {key=val} {Writer=mukuldk}
 
-  -- DX: This 2 commands can be Override in direct "Docker Run"
-  ENTRYPOINT Specify default executable. -- G: ["nmp"], ["pnpm"] , ["/bin/sh"]? ,
-  CMD Specify default commands. -- G: ["exicutable","arg1","arg2"]
+  -- Y: Executable fields
+  ENTRYPOINT Specify default executable NON-MODIFIABLE. -- G: ["nmp"], ["pnpm"] , ["/bin/sh"]? ,
+  CMD Specify default commands MODIFIABVLE. -- G: ["exicutable","arg1","arg2"]
+  -- DX: With "docker run" + command we can override the cmd
 
 
 
@@ -60,16 +61,19 @@ VOLUME
 LABEL CREATER="mukuldk"
 
 
-CMD ["bun","start"]
+CMD ["bun","start"] // G: 1
  or
-ENTRYPOINT  ["bun"] or ["pnpm"]
+ENTRYPOINT  ["bun"] or ["pnpm"] // G:2
 CMD ["start"]
  or
-ENTRYPOINT  ["sleep"]
+ENTRYPOINT  ["sleep"]  // G: 3
 CMD ["5"]
 
-// DX: OVERRIDING ( ENTRYPOING + CMD )
-// Y: =>  docker run -it -d -p 8080:3000 myimg npm i
+// DX: OVERRIDING CMD Limitations
+// Y:
+//  in (1) docker run -it -d -p 8080:3000 myimg npm i
+//  in (2) docker run -it -d -p 8080:3000 myimg (i/start/stop) [because entrypoint cant be overridestopstop]
+//  in (3) docker run -it myimg (1/2/3/..) [again because entrypoint cant be overridestopstop]
 
 
 
