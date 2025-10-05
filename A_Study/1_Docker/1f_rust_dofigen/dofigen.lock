@@ -1,0 +1,79 @@
+effective: |
+  context:
+  - /src
+  - /Cargo.*
+  builders:
+    muslrust:
+      fromImage:
+        path: clux/muslrust
+        digest: sha256:89a0b1b96e363b05a877f9fb9a8d6ae290411b4b04666c244a49de6e9463a2ef
+      label:
+        org.opencontainers.image.base.name: docker.io/clux/muslrust:stable
+        org.opencontainers.image.base.digest: sha256:89a0b1b96e363b05a877f9fb9a8d6ae290411b4b04666c244a49de6e9463a2ef
+      workdir: /app
+      run:
+      - cargo build --release
+      - mv target/x86_64-unknown-linux-musl/release/chapter_1 /tmp/
+      cache:
+      - target: /home/rust/.cargo
+      - target: /app/target
+      bind:
+      - target: Cargo.toml
+        source: Cargo.toml
+      - target: Cargo.lock
+        source: Cargo.lock
+      - target: src/
+        source: src/
+  label:
+    io.dofigen.version: 2.5.0
+  workdir: /app
+  copy:
+  - fromBuilder: muslrust
+    paths:
+    - /tmp/chapter_1
+    target: /bin/
+  entrypoint:
+  - chapter_1
+  cmd:
+  - --help
+images:
+  docker.io:
+    clux:
+      muslrust:
+        stable:
+          digest: sha256:89a0b1b96e363b05a877f9fb9a8d6ae290411b4b04666c244a49de6e9463a2ef
+resources:
+  dofigen.yaml:
+    hash: a5fea8b9c598dc4a1c687c92da7fd4c018b05e3f092096c8ab1fdd5d1d878c08
+    content: |
+      builders:
+        muslrust:
+          fromImage: clux/muslrust:stable
+          workdir: /app
+          bind:
+            - Cargo.toml
+            - Cargo.lock
+            - src/
+          run:
+            # Build with musl to work with scratch
+            - cargo build --release
+            # copy the generated binary outside of the target directory. If not the other stages won't be able to find it since it's in a cache volume
+            - mv target/x86_64-unknown-linux-musl/release/chapter_1 /tmp/
+            # - mv target/x86_64-unknown-linux-musl/release/${CARGO_PKG_NAME} /tmp/
+          cache:
+            # Cargo cache
+            - /home/rust/.cargo
+            # build cache
+            - /app/target
+
+      # Runtime
+      workdir: /app
+      copy:
+        - fromBuilder: muslrust
+          paths: "/tmp/chapter_1"
+          target: "/bin/"
+      entrypoint: chapter_1
+      cmd: --help
+      context:
+        - "/src"
+        - "/Cargo.*"
