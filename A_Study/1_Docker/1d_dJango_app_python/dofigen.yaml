@@ -1,0 +1,28 @@
+# Build stage
+stages:
+  - name: build
+    fromImage: python:3.12-alpine
+    workdir: /app
+    copy:
+      - source: ./requirements.txt
+        target: /app/
+    run:
+      - pip install --no-cache-dir -r ./requirements.txt
+
+# Runtime stage
+  - name: runtime
+    fromImage: python:3.12-alpine
+    workdir: /app
+    copyFrom: build  # <-- Y: very very super imp lineCopy everything from the build stage 
+    copy:
+      - source: ./devops/
+        target: /app/
+    run:
+      - python3 manage.py migrate
+    entrypoint: python3
+    cmd:
+      - manage.py
+      - runserver
+      - 0.0.0.0:8000
+    expose:
+      - 8000
