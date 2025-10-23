@@ -1,0 +1,6 @@
+version : "1.0"
+services : 
+  web : 
+    build : ./img_1_alpine_cmatrix/
+    ports :
+      - "8000:8000"
