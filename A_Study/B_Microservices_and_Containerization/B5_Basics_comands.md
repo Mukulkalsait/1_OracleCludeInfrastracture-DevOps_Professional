@@ -53,3 +53,19 @@
 - **Containers have ID + auto-generated name.**
 - **docker inspect** often tested (resource details, commands, networking).
 - **Lifecycle**: run → stop/start → restart → remove.
+
+## Key Notes for Exam
+
+- **docker run** auto-pulls image if missing.
+- **-it** = interactive terminal, **-d** = detached.
+- **Containers have ID + auto-generated name.**
+- **docker inspect** often tested (resource details, commands, networking).
+- **Lifecycle**: run → stop/start → restart → remove.
+
+## Key Notes for Exam
+
+- **docker run** auto-pulls image if missing.
+- **-it** = interactive terminal, **-d** = detached.
+- **Containers have ID + auto-generated name.**
+- **docker inspect** often tested (resource details, commands, networking).
+- **Lifecycle**: run → stop/start → restart → remove.
