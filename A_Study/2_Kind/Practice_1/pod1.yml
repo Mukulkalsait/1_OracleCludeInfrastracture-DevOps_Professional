@@ -1,0 +1,41 @@
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "pod-nginx-p1"
+  namespace: pro1
+  labels:
+    app: "pod-nginx-p1"
+  annotations:
+     kubectl.kubernetes.io/default-container:  pod-nginx-p1
+spec:
+  containers:
+  - name: pod-nginx-p1
+    image: "nginx:latest"
+    resources:
+      limits:
+        cpu: 200m
+        memory: 500Mi
+      requests:
+        cpu: 100m
+        memory: 200Mi
+    # env:
+    # - name: DB_HOST
+    #   valueFrom:
+    #     configMapKeyRef:
+    #       name: pro1_nginx
+    #       key: DB_HOST
+    ports:
+    - containerPort: 80
+      name: http
+  #   volumeMounts:
+  #   - name: localtime
+  #     mountPath: /etc/localtime
+  # volumes:
+  #   - name: localtime
+  #     hostPath:
+  #       path: /usr/share/zoneinfo/Asia/Taipei
+  restartPolicy: Always
+---
+
+
