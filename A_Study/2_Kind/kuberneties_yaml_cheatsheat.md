@@ -2,9 +2,11 @@
 # YAML File Examples
 Here are example YAML files for common Kubernetes resources. These can be used as templates (save as .yaml and apply with `kubectl apply -f <file>`). I've included basic to advanced examples.
 
-### Namespace YAML (namespace.yml)
+# Namespace YAML (namespace.yml)
 ```yaml
 apiVersion: v1
+metadata: 
+  name: pro_1
 kind: Namespace
 metadata:
   name: my-namespace
