@@ -1,0 +1,34 @@
+apiVerions: v1
+kind: Deployment
+metadata: 
+  name: web-backend
+  namespace: top-1
+  lable:
+    app: nginx-lable-a
+spec:
+  selector:
+    matchlable:
+      app: naginx
+  replica: 3
+  tampelete:
+    matadata: 
+      lable: 
+        app: nginx-lable-a
+        # annotations:
+    spec:
+      container:
+        - name: nginx-continaers-web-backend
+          image: nginx:latest
+          resources:
+            request:
+              cpu: 100m
+              memory: 100Mi
+            limit:
+              cpu: 200m
+              memory: 200Mi
+          port:
+            - containerPort: 80
+              name: localhost
+            - hostPort: 8080
+              name: localhost
+      restartPolicy: no
