@@ -1,10 +1,10 @@
 apiVerions: v1
 kind: Deployment
 metadata: 
-  name: web-backend
+  name: web-backend # Deployment.name
   namespace: top-1
   lable:
-    app: nginx-lable-a
+    app: nginx-lable-a #ns.lable.name
 spec:
   selector:
     matchlable:
