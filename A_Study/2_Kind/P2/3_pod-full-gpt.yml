@@ -1,0 +1,82 @@
+# ---------------------------------------------------------
+# 🧱 Backend API Pod Definition (Clean & Maintainable)
+# ---------------------------------------------------------
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend-api-pod                    # Unique pod name
+  namespace: default
+  labels:
+    app: backend-api                       # Identifies app family
+    tier: backend                          # Logical group for infra
+  annotations:
+    kubectl.kubernetes.io/default-container: backend-container
+spec:
+  containers:
+    - name: backend-container              # Container name inside pod
+      image: debian-slim:latest
+      imagePullPolicy: IfNotPresent         # Avoid unnecessary image pulls
+
+      ports:
+        - containerPort: 8080               # Internal app port
+          name: http
+
+      # ✅ Environment variables from ConfigMap
+      envFrom:
+        - configMapRef:
+            name: backend-api-config        # ConfigMap for app config
+
+      # ✅ Resource requests and limits
+      resources:
+        requests:
+          cpu: 100m
+          memory: 200Mi
+        limits:
+          cpu: 200m
+          memory: 500Mi
+
+      # ✅ Health checks (important!)
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 30
+      readinessProbe:
+        httpGet:
+          path: /ready
+          port: 8080
+        initialDelaySeconds: 5
+        periodSeconds: 15
+
+      # ✅ Mount timezone config
+      volumeMounts:
+        - name: timezone-config
+          mountPath: /etc/localtime
+          readOnly: true
+
+  # ✅ ConfigMap volume for timezone (instead of hostPath)
+  volumes:
+    - name: timezone-config
+      configMap:
+        name: timezone-data
+        items:
+          - key: localtime
+            path: localtime
+
+  restartPolicy: Always
+
+# Y: aboveInformaiton.md 
+# _______________________________________________________________________________________________________________________
+# | Field                      | Example Value                       | Purpose                                          |
+# | -------------------------- | ----------------------------------- | ------------------------------------------------ |
+# | **Pod name**               | `backend-api-pod`                   | Uniquely identifies the Pod                      |
+# | **Container name**         | `backend-container`                 | Used for logs, probes, etc.                      |
+# | **Label app**              | `backend-api`                       | Groups related resources (Deployments, Services) |
+# | **Label tier**             | `backend`                           | Logical grouping for backend layer               |
+# | **ConfigMap name**         | `backend-api-config`                | Stores environment variables                     |
+# | **Volume name**            | `timezone-config`                   | Mounts ConfigMap with timezone data              |
+# | **ConfigMap (for volume)** | `timezone-data`                     | ConfigMap that holds `/etc/localtime`            |
+# | **Annotations**            | For Kubernetes tools like `kubectl` | Optional metadata                                |
+# =======================================================================================================================
+#
