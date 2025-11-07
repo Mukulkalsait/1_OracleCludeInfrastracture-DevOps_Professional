@@ -1,34 +1,37 @@
-apiVerions: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: web-backend # Deployment.name
   namespace: top-1
-  lable:
+  labels:
     app: nginx-lable-a #ns.lable.name
 spec:
   selector:
-    matchlable:
-      app: naginx
-  replica: 3
-  tampelete:
-    matadata: 
-      lable: 
-        app: nginx-lable-a
+    matchLabels:
+      app: nginx-lable-a #Y: MatchLables
+  replicas: 3
+  template:
+    metadata: 
+      labels: 
+        app: nginx-lable-a #Y: Lables
         # annotations:
     spec:
-      container:
-        - name: nginx-continaers-web-backend
+      containers:
+        - name: nginx-container-web-backend
           image: nginx:latest
           resources:
-            request:
+            requests:
               cpu: 100m
               memory: 100Mi
-            limit:
+            limits:
               cpu: 200m
               memory: 200Mi
-          port:
+          ports:
             - containerPort: 80
-              name: localhost
-            - hostPort: 8080
-              name: localhost
-      restartPolicy: no
+              name: http
+              protocol: TCP
+            - containerPort: 443
+              name: https
+              protocol: TCP
+
+              # restartPolicy: Always DX: not needed as deployment allway restartz PODS
