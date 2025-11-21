@@ -3,3 +3,11 @@ apiVersion: v1
 metadata:
   name: namespace-1
 
+---
+
+
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: namespace-2
+
