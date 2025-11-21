@@ -17,7 +17,7 @@ spec:
         app: label-nginx
     spec:
       containers:
-      - name: nginx-app
+      - name: nginx-deployment-container
         image: nginx:latest
         # imagePullPolicy: 
         resources:
