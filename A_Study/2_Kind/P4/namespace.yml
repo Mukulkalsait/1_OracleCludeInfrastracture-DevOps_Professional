@@ -5,9 +5,15 @@ metadata:
 
 ---
 
-
 kind: Namespace
 apiVersion: v1
 metadata:
   name: namespace-2
+
+---
+
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: namespace-3
 
