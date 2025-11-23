@@ -1,3 +1,11 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
-specs:H
+metadata:
+  name: vol-1-pvc # Y: give thi into the PODTEMP.
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+  storageClassName: pv-vol-1 # Y: matches the name of pv storageClassName
