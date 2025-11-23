@@ -1,0 +1,1136 @@
+    1  passwd
+    2  sudo passwd
+    3  exit
+    4  passwd
+    5  sudo passwd mukuldk
+    6  clear
+    7  exit
+    8  lsl
+    9  clear
+   10  tt
+   11  exit
+   12  kubectl 
+   13  lsd
+   14  nvim
+   15  exit
+   16  exit
+   17  lsl
+   18  y
+   19  lsblk
+   20  lsl
+   21  cd
+   22  lsl
+   23  cd ..
+   24  ls
+   25  y
+   26  lsblk
+   27  sudo mount /dev/mmcblk0p1 /home/mukuldk/C_Mounts
+   28  ls
+   29  cd c
+   30  cd C
+   31  \tcd C_Mounts
+   32  ls
+   33  tt
+   34  nixConfig
+   35  snrsf 
+   36  nixConfig
+   37  snrsf
+   38  sudo nixos-rebuild switch --flake /etc/nixos#Nix2
+   39  clear
+   40  cdN
+   41  ls
+   42  nvim
+   43  lazygit
+   44  git
+   45  gh
+   46  gh --help
+   47  gh status
+   48  lsl
+   49  ls
+   50  lsblk
+   51  ls
+   52  reboot
+   53  lsblk
+   54  lsblk 
+   55  lsblk
+   56  tt
+   57  lsl
+   58  lsblk
+   59  lsl
+   60  lsblk
+   61  sudo mount /dev/sdc1 /home/mukuldk/C_Mounts
+   62  lsl
+   63  y
+   64  sudo yazi
+   65  y
+   66  exit
+   67  y
+   68  suod y
+   69  sudo y
+   70  sudo yazi
+   71  lsl
+   72  cd mukuldk
+   73  y
+   74  nixConfig
+   75  snrsf
+   76  fastfetch
+   77  y
+   78  snrsf
+   79  nvim
+   80  reboot
+   81  y
+   82  tt
+   83  y
+   84  lsl
+   85  nvim
+   86  cde
+   87  cd
+   88  ls
+   89  cd A_Files
+   90  ls
+   91  y
+   92  nixConfig
+   93  clear
+   94  snrsf
+   95  y
+   96  snrsf
+   97  nixConfig
+   98  snrsf
+   99  cdN
+  100  lazygit
+  101  nixConfig
+  102  cd ..
+  103  ls
+  104  cdN
+  105  ls
+  106  grep zen ./*
+  107  grep -r zen ./*
+  108  nixConfig
+  109  snrsf
+  110  cdN
+  111  nixConfig
+  112  poweroff
+  113  hyprctl display
+  114  hyprctl --help 
+  115  hyprctl --help | grep display
+  116  hyprctl monitors
+  117  tt
+  118  lsl
+  119  y
+  120  nixConfig
+  121  ls
+  122  y
+  123  pwd
+  124  snrsf
+  125  nvim
+  126  y
+  127  tt
+  128  nixConfig
+  129  snrsf
+  130  nixConfig
+  131  snrsf
+  132  reboot
+  133  y
+  134  nixConfig
+  135  snrsf
+  136  lsl
+  137  exit
+  138  reboot
+  139  tt
+  140  nixConfig
+  141  ls
+  142  cd /
+  143  ls
+  144  sudo su
+  145  nixConfig
+  146  clear
+  147  exit
+  148  snrsf
+  149  reboot
+  150  tt
+  151  lsl
+  152  nixConfig
+  153  snrsf
+  154  y
+  155  ls
+  156  kind create cluster --name Pro1 --config=./1_kind_cluster1-2.yml
+  157  kind create cluster --name pro1 --config=./1_kind_cluster1-2.yml
+  158  lsd
+  159  kubectl get pods
+  160  kubectl get pods --all-namespaces
+  161  clear
+  162  kind delete cluster pro1
+  163  kind get clusters
+  164  kind delete cluster --name pro1
+  165  ls
+  166  y
+  167  lsd
+  168  podman-compose --help
+  169  y
+  170  podman-compose -f ./podman-compose-new.yml -n vihaanaitech
+  171  lsl
+  172  cd
+  173  lsl
+  174  y
+  175  gh auth login
+  176  git config --global credential.helper libsecret\n
+  177  sudo git config --global credential.helper libsecret\n
+  178  gh auth login
+  179  sudo git config --global credential.helper libsecret\n
+  180  clear
+  181  git status 
+  182  gh status
+  183  gh auth status
+  184  clear
+  185  nixConfig
+  186  y
+  187  git remote -v
+  188  cdN
+  189  ls
+  190  git remote -v
+  191  git config --global --add safe.directory /etc/nixos
+  192  sudo git config --global --add safe.directory /etc/nixos
+  193  git remote -v
+  194  ls
+  195  exit
+  196  y
+  197  lsl
+  198  rm -rf error.md
+  199  gh auth status
+  200  nixConfig
+  201  tt
+  202  nixConfig
+  203  y
+  204  git push 
+  205  git push origin nixOnDell
+  206  cdN
+  207  ls
+  208  lazygit
+  209  git push origin nixOnDell
+  210  git push 
+  211  git config --global --add safe.directory /etc/nixos\n
+  212  sudo git config --global --add safe.directory /etc/nixos\n
+  213  git push origin nixOnDell
+  214  git push 
+  215  git config --global --add safe.directory /etc/nixos\n
+  216  sudo git config --global --add safe.directory /etc/nixos\n
+  217  git push
+  218  git config --global --add safe.directory /etc/nixos\n
+  219  sudo git config --global --add safe.directory /etc/nixos\n
+  220  ls
+  221  lsl
+  222  sudo git push
+  223  snrsf
+  224  git config --global credential.helper libsecret\n
+  225  sudo git config --global credential.helper libsecret\n
+  226  git push 
+  227  snrsf
+  228  git push
+  229  cdN
+  230  git push
+  231  git push origin nixOnDell
+  232  git config --global credential.helper libsecret\n
+  233  sudo git config --global credential.helper libsecret\n
+  234  git push
+  235  git config --global credential.helper libsecret\n
+  236  sudo git config --global credential.helper libsecret\n
+  237  git auth login
+  238  gh auth login
+  239  git push
+  240  git config --global --add safe.directory /etc/nixos
+  241  sudo git config --global credential.helper libsecret\n
+  242  sudo git config --global --add safe.directory /etc/nixos
+  243  git push
+  244  pwd
+  245  git config --global --add safe.directory /etc/nixos
+  246  ls
+  247  lsl
+  248  sudo git config --global --add safe.directory /etc/nixos 
+  249  git push
+  250  git config
+  251  git config --global credential.helper store
+  252  sudo chown -R mukuldk:mukuldk /etc/nixos
+  253  groups
+  254  id -gn
+  255  sudo chown -R mukuldk:users /etc/nixos
+  256  lsl
+  257  git push
+  258  clear
+  259  exit
+  260  y
+  261  git status
+  262  y
+  263  git remote -v
+  264  git remote set-url origin https://github.com/Mukulkalsait/1_OracleCludeInfrastracture-DevOps_Professional
+  265  git remote -v
+  266  git add .
+  267  git commit -m "all"
+  268  git pulll
+  269  git pull
+  270  git push
+  271  clear
+  272  btop
+  273  tt
+  274  nvim
+  275  btop
+  276  git remote -v
+  277  git remote set-url origin https://github.com/Mukulkalsait/2_rust-Programming
+  278  git remote -v
+  279  git status
+  280  git push
+  281  gh auth login
+  282  git auth login
+  283  gh auth login
+  284  git push origin master
+  285  nvim
+  286  ls
+  287  y
+  288  ls
+  289  kind create cluster  --name test1 --config=./4_kindPractice.yml
+  290  y
+  291  git status
+  292  git add . 
+  293  git commit -m "recent"
+  294  git push origin master
+  295  kind get clusters
+  296  kubectl get pods --all-namespaces
+  297  kind get ns
+  298  kind ns
+  299  kind get ns
+  300  kind get namespaces
+  301  kl get ns
+  302  kind get clusters
+  303  kind delete cluster --name test1
+  304  clear
+  305  exit
+  306  poweroff
+  307  lsl
+  308  clear
+  309  tt
+  310  nvim
+  311  y
+  312  nvimConfig
+  313  clear
+  314  cd
+  315  yu
+  316  y
+  317  lsl
+  318  nvim
+  319  nixConfig
+  320  y
+  321  nix-shell -p tradingview
+  322  unFree nix-shell -p tradingview
+  323  nixConfig
+  324  y
+  325  snrsf
+  326  clear
+  327  tt
+  328  exit
+  329  lsl
+  330  exit
+  331  y
+  332  hostname -I
+  333  curl http://192.168.1.12:5176
+  334  curl http://192.168.1.10:5176
+  335  clear
+  336  cleawr
+  337  exit
+  338  nvim
+  339  tt
+  340  y
+  341  ls
+  342  nvim
+  343  ls
+  344  bun --version
+  345  npm --version
+  346  npm init -y
+  347  npx tailwindcss -i ./main/css/input.css -o ./main/css/style.css --watch\n
+  348  npx tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch
+  349  passwd
+  350  npm install -D tailwindcss postcss autoprefixer\n
+  351  npx tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch
+  352  npm install\n
+  353  npx tailwindcss init\n
+  354  npm uninstall tailwindcss\nnpm install -D tailwindcss\n
+  355  npx tailwindcss -v\n
+  356  ./node_modules/.bin/tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch\n
+  357  /node_modules/.bin/tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch\n
+  358  y
+  359  ls
+  360  cd ..
+  361  ls
+  362  cd ..
+  363  ls
+  364  y
+  365  pnpm install
+  366  corepack enable\ncorepack prepare pnpm@latest --activate\n
+  367  pnpm install
+  368  nixConfig
+  369  snrsf
+  370  pnpm 
+  371  clear
+  372  exit
+  373  pnpm run tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch
+  374  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch\n
+  375  pnpm dlx tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch\n
+  376  pnpm add -D tailwindcss-cli\n
+  377  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch\n
+  378  pnpm exec tailwindcss-cli -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch\n
+  379  pnpm remove tailwindcss-cli\n
+  380  pnpm dlx tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch\n
+  381  ls 
+  382  pnpm remove tailwindcss\n
+  383  pnpm add -D tailwindcss@3 autoprefixer postcss\n
+  384  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch\n
+  385  cd
+  386  ssh-keygen -t ed25519 -C "mdk.121.72633.sg@gmail.com"
+  387  eval "$(ssh-agent -s)"\nssh-add ~/.ssh/id_ed25519\n
+  388  cat ~/.ssh/id_ed25519.pub\n
+  389  ssh -T git@github.com\n
+  390  lsl
+  391  tt
+  392  exit
+  393  ls
+  394  ly
+  395  y
+  396  ssh -i "vihanUbuntu.pem" ubuntu@ec2-13-200-223-188.ap-south-1.compute.amazonaws.com
+  397  ls
+  398  sudo chmod 400 vihanUbuntu.pem
+  399  lsl
+  400  ssh -i "vihanUbuntu.pem" ubuntu@ec2-13-200-223-188.ap-south-1.compute.amazonaws.com
+  401  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --minify\n
+  402  npx update-browserslist-db@latest
+  403  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --minify\n
+  404  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --watch\n
+  405  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --minify\n
+  406  y
+  407  ssh -i "vihanUbuntu.pem" ubuntu@ec2-13-200-223-188.ap-south-1.compute.amazonaws.com
+  408  y
+  409  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --minify\n
+  410  exit
+  411  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --minify\n
+  412  y
+  413  pnpm exec tailwindcss -i ./main/Assets/css/input.css -o ./main/Assets/css/style.css --minify\n
+  414  tt
+  415  lsl
+  416  y
+  417  git clone https://github.com/Mukulkalsait/6_terraform-aws-secure-vpc-ec2.git
+  418  lsl
+  419  rm -rf 6_terraform-aws-secure-vpc-ec2
+  420  lsl
+  421  git clone git@github.com:Mukulkalsait/6_terraform-aws-secure-vpc-ec2.git
+  422  lsl
+  423  y
+  424  nvim
+  425  hostname -I
+  426  hostname -i
+  427  ip link
+  428  ip addr
+  429  hostname -i
+  430  ss -tulip
+  431  ss -t
+  432  fastfetch
+  433  y
+  434  nvim
+  435  y
+  436  ssh -i "vihanUbuntu.pem" ubuntu@ec2-13-200-223-188.ap-south-1.compute.amazonaws.com
+  437  nvim
+  438  clear
+  439  poweroff
+  440  ip addr --help
+  441  ip --help
+  442  ip addr help
+  443  ip link help
+  444  ip route help
+  445  ip link help
+  446  ip rule help
+  447  ip addr help
+  448  ip route help
+  449  ip tunnel helpy
+  450  ip tunnel help
+  451  ip vfr help
+  452  ip vrf help
+  453  ip netns help
+  454  ip mroute help
+  455  ip maddr help
+  456  ip monitor help
+  457  ip tunnel help
+  458  curl -h
+  459  curl --help all
+  460  lsl
+  461  tt
+  462  y
+  463  \npodman 
+  464  lsl
+  465  podman --help
+  466  podman volume --help
+  467  podman img help
+  468  podman image help
+  469  podman image --help
+  470  docker image --help
+  471  docker -v
+  472  podman 0v
+  473  podman -v
+  474  systemctl status | grep docker
+  475  systemctl status docker
+  476  sudo systemctl status docker
+  477  sudo systemctl status podman
+  478  lsd
+  479  sudo systemctl status podman
+  480  exit
+  481  podman info 
+  482  podman stats
+  483  podman pull nginx
+  484  podman run nginx -d
+  485  podman run nginx
+  486  lsd
+  487  podman run nginx
+  488  lsd
+  489  lsl
+  490  podman images
+  491  podman rmi nginx:latest
+  492  podman run nginx
+  493  podman run nginx -d
+  494  podman ps -a
+  495  podman rmi nginx:latest
+  496  podman ps
+  497  podman images
+  498  podman containers
+  499  podman container
+  500  podman container kill list
+  501  podman container list
+  502  podman run busybox
+  503  podman run busybox -d
+  504  podman run -it busybox
+  505  podman run -d busybox watch | ip link
+  506  podman run -d busybox ip link
+  507  podman run -d busybox 
+  508  podman run -d busybox -- bash ls
+  509  podman run -d busybox sh -c "watch -i 2 | ip link "
+  510  podman ps 
+  511  podman ps -a
+  512  podman rm cranky_shannon
+  513  podman ps -a
+  514  podman run -it busybox sh -c "watch -i 2 'ip link'"
+  515  podman run -d busybox sh -c "watch -n 2 'ip link'"
+  516  lsd
+  517  podman ps 
+  518  podman stop jolly_cray
+  519  ;\n
+  520  podman ps
+  521  podman ps -a
+  522  podman rm jolly_cray
+  523  lsl
+  524  y
+  525  nvm
+  526  nvim
+  527  lsl
+  528  cd A_Study/2_Kind/
+  529  ls
+  530  kind create cluster --name porject1 --config=./1_kind_cluster1-2.yml
+  531  kubectl get pods --all-namespaces
+  532  kl get ns kube-system
+  533  kubectl create ng nginx
+  534  kl create ng nginx
+  535  kl create ns nginx
+  536  kl run ngixn --image nginx 
+  537  kl get pods
+  538  kl get pods -n nginx
+  539  kl delete pod nginx
+  540  kl delete pod ngixn
+  541  kl create pod nginx -n nginx
+  542  kl run nginx --name nginx -n nginx
+  543  kl run nginxpod --image nginx -n nginx
+  544  kl get pods -n nginx
+  545  kl get pods 
+  546  kl get pods --all-namespaces
+  547  kl delete pod nginx
+  548  kl delete pod nginx -n nginx
+  549  kl get pods -n nginx
+  550  kl delete pod -n nginx nginxpod
+  551  kl delete ns nginx
+  552  kl get pods --all-namespaces
+  553  clear
+  554  kubectl get api-resources
+  555  klr
+  556  klh
+  557  klar
+  558  ls
+  559  y
+  560  kubectl apply -f namespace.yml
+  561  kubectl get ns
+  562  kubectl delete -f namespace.yml
+  563  kubectl get ns
+  564  kubectl apply -f namespace.yml
+  565  kl get ns
+  566  kl delete ns namespace-for-nginx
+  567  ls
+  568  kl apply -f namespace.yml
+  569  kl apply -f pod.yml
+  570  kl get pods -n namespace-1 busybox1
+  571  kl describe pod -n namespace-1 busybox1
+  572  kl exec -it -n namespace-1 busybox1 -- bash
+  573  kl exec -it -n namespace-1 busybox1 
+  574  klh
+  575  klei -n namespace-1 busybox1 -- sh
+  576  kl get pods -n namespace-1
+  577  kl logs -n namespace-1 busybox1
+  578  kl info -n namespace.yml
+  579  kl describe -n namespace-1
+  580  kl api-resources -n namespace-1
+  581  kl ps
+  582  kl get pods -n namespace-1
+  583  kl get ns
+  584  klei -n namespace-1 busybox1 -- bash
+  585  kl delete pod -n namespace-1 busybox1
+  586  lsl
+  587  klh
+  588  kla pod.yml
+  589  klei -n namespace-1 busybox1 -- bash
+  590  klei -n namespace-1 busybox -- bash
+  591  kubectl exec -it -n namespace-1 busybox1 --bash
+  592  kubectl exec -it -n namespace-1 busybox1 -- bash
+  593  kl get pod -n namespace-1 busybox1 -o jsonpath 
+  594  kl get pod -n namespace-1 busybox1 -o 
+  595  kl get pod -n namespace-1 busybox1 -o jsonpath='\n\n\n
+  596  kl get pod -n namespace-1 busybox1 -o jsonpath='{.spec.container[*].name}'
+  597  kubectl get pod busybox1 -n namespace-1 -o jsonpath='{.spec.containers[*].name}'\n
+  598  kl get pod -n namespace-1 busybox1 -o jsonpath='{spec.containers[*].name}'
+  599  kl get pod -n namespace-1 busybox1 -o jsonpath='{.spec.containers[*].name}'
+  600  kl get pods -n namespace-1 -o wide
+  601  kl get pod -n namespace-1 -o wide
+  602  kl get pods -n namespace-1
+  603  kl delete -f pod.yml
+  604  kl get pods -n namespace-1
+  605  kla pod.yml
+  606  kl get pods -n namespace-1 -o wide
+  607  kl get pods -n namespace-1 -o wide | watch -n 1 | awk "{print $3}\n
+  608  kl describe pod -n namespace-1 busybox1
+  609  klg pod -n namespace-1 
+  610  klg pod -n namespace-1 -o wide
+  611  kl logs -n namespace-1 busybox1
+  612  kl logs -n namespace-1 --container=busybox
+  613  kl logs -n namespace-1 --container busybox
+  614  kl logs -n namespace-1 --container busybox1
+  615  kl logs -h
+  616  kl logs -n namespace-1 --container='busybox'
+  617  kl logs -n namespace-1 --container='busybox1'
+  618  kl logs -n namespace-1 busybox1 --container='busybox'
+  619  kl logs -n namespace-1 busybox1 --container busybox
+  620  kl logs -n namespace-1 busybox1 --container=busybox
+  621  kubectl logs busybox1 -n namespace-1 --container=busybox\n
+  622  kl get pods -n namespace-1 -o wide 
+  623  kl describe pod -n namespace-1 busybox1
+  624  kl get pods -n namespace-1 -o wide
+  625  kl get pods -n namespace-1 busybox1 -o jsonpath='{.conf.containers[*}.name}'
+  626  kl get pods -n namespace-1 busybox1 -o jsonpath='{.conf.containers[*].name}'
+  627  kl get pods  -n namespace-1 busybox1 -o jsonpath='{.spec.containers[*].name}'
+  628  kl logs -n namespace-1 busybox1 --container=engin
+  629  kl logs -n namespace-1 busybox1 --container engin
+  630  kl get pods   -n namespace-1 busybox1 -o jsonpath='{.spec.containers[*].name}'
+  631  kl logs -n namespace-1 busybox1 --container=engin
+  632  kl logs -n namespace-1 busybox1 --container='engin'
+  633  kl  logs -n namespace-1 busybox1 --container=engin
+  634  kl exec -it -n namespace-1 busybox1
+  635  kl exec -it -n namespace-1 busybox1 -- bash
+  636  kl exec -it -n namespace-1 busybox1 -c engin --sh
+  637  kl exec -it -n namespace-1 busybox1 -c engin -- sh
+  638  kl get pods -n namespace-1 -o wide
+  639  kl delete -f pod.yml
+  640  kla pod.yml
+  641  watch -n 1 | kl get pods -n namespace-1 -o wide 
+  642  watch -n 1 kl get pods -n namespace-1 -o wide 
+  643  watch -n 1 kubectl get pods -n namespace-1 -o wide 
+  644  watch -n 1 kubectl get pods -n namespace-1 -o wide | awk "{print $3}"
+  645  watch -n 1 kubectl get pods -n namespace-1 -o wide | awk "{print}"
+  646  watch -n 1 'kubectl get pods -n namespace-1 -o wide | awk "{}"
+  647  watch -n 1 'kubectl get pods -n namespace-1 -o wide | awk "{print $3}"
+  648  watch -n 1 'kubectl get pods -n namespace-1 -o wide | awk "{print $3}"'
+  649  kl get pods -n namespace-1 -o wide | awk "{print $3}"
+  650  kl get pods -n namespace-1 -o wide | awk 
+  651  kl get pods -n namespace-1 -o wide | awk "{print}"
+  652  kl get pods -n namespace-1 -o wide | awk "{print $1}"
+  653  kl get pods -n namespace-1 -o wide | awk "{print $9}"
+  654  kl get pods -n namespace-1 -o wide | awk "{print \$9}"
+  655  kl get pods -n namespace-1 -o wide | awk "{print \$3}"
+  656  kl get pods -n namespace-1 -o wide
+  657  watch -n 1 'kl get pods -n namespace-1 -o wide | awk "{print \$3}"'
+  658  watch -n 1 'kubectl get pods -n namespace-1 -o wide | awk "{print \$3}"'
+  659  watch -n 1 'kubectl get pods -n namespace-1 -o wide | awk "{print }"'
+  660  watch -n 1 'kubectl get pods -n namespace-1 -o wide | awk "{print \$1, \$3, \$5 , \$7}"'
+  661  kl  describe pod -n namespace-1 busybox1
+  662  kl get pods -n namespace-1 -o wide
+  663  ls
+  664  kl delete -f pod.yml
+  665  k9s
+  666  kla pod.yml
+  667  watch -n 1 'kubectl get pods -n namespace-1 -o wide'
+  668  kl delete -f pod.yml
+  669  kla pod.yml
+  670  watch -n 1 'kubectl get pods -n namespace-1 -o wide'
+  671  kubectl get pods 
+  672  kubectl get pods --all-namespaces
+  673  kubectl 
+  674  kubeclt 
+  675  kubect
+  676  kubectl
+  677  kubect
+  678  kubectl 
+  679  kubeclt 
+  680  kubectl
+  681  kubeclt 
+  682  kubeclt
+  683  kubectl
+  684  kubectl delete -f pod.yml
+  685  kubectl apply -f deployment.yml
+  686  kubectl get pods -n namespace-1 -o wide
+  687  kubectl get pods -n namespace-1 
+  688  kl logs -n namespace-1 dep-1-5fd878744f-6j4nn
+  689  kl logs -n namespace-1 dep-1-5fd878744f-9gn75
+  690  kl describe -n namespace-1 dep-1-5fd878744f-6j4nn
+  691  kl describe -n namespace-1
+  692  kubectl describe namespaces namespace-1
+  693  kl describe pod -n namespace-1 dep-1-5fd878744f-6j4nn
+  694  kubectl get pods -n namespace-1 -o wide
+  695  curl 10.244.1.5:8080
+  696  hostname
+  697  hostname -i
+  698  curl http://localhost:8080
+  699  kubectl delete -f deployment.yml
+  700  kl get pods 
+  701  kl get pods -n namespace-1
+  702  kubectl apply -f deployment.yml
+  703  kubectl get pods -n namespace-1 -o wide
+  704  kubectl delete -f deployment.yml
+  705  kl get pods -n namespace-1
+  706  kla deployment.yml
+  707  kubectl get pods -n namespace-1 -o wide
+  708  kubectl port-forward deployments/dep-1 -n namespace-1 8080:80
+  709  kubectl port-forward deployments/dep-1 -n namespace-1 8081:80
+  710  curl http://localhost:8081
+  711  kubectl port-forward -d deployments/dep-1 -n namespace-1 8081:80
+  712  lsl
+  713  cd ..
+  714  lsl
+  715  cd ..
+  716  lsl
+  717  nvim
+  718  git --oringn
+  719  git remote -v
+  720  git remote set-url origin git@github.com:Mukulkalsait/1_OracleCludeInfrastracture-DevOps_Professional.git
+  721  podman search nginx
+  722  podman manifest inspect nginx:latest
+  723  podman image inspect nginx:latest
+  724  podman image inspect grafana/grafana
+  725  podman image inspect grafana/grafana:latest
+  726  podman search grafana
+  727  podman image inspect grafana:latest
+  728  podman image inspect nginx:latest
+  729  podman search nginx
+  730  podman search git
+  731  podman search gitlab
+  732  podman pull gitlab
+  733  podman pull mpc/gitlab:latest
+  734  podman pull gitlab/gitlab-ce
+  735  podman top
+  736  kubectl top
+  737  kubectl top node porject1-worker 
+  738  nix-shell -p teraform
+  739  nix-shell -p terraform
+  740  unFree nix-shell -p terraform
+  741  btop
+  742  kubectl get deployment -n namespace-1
+  743  kubectl get pods -n namespace-1 -o wide 
+  744  kubectl  port-forward -d dep-1 -n namespace.yml 8081:80
+  745  kubectl  port-forward -d deployments/dep-1 -n namespace.yml 8081:80
+  746  kubectl port-forward -d deployments/dep-1 -n namespace-1 8081:80
+  747  kubectl   port-forward deployments/dep-1 -n namespace-1 8081:80
+  748  hostname -i
+  749  curl 127.0.0.2:8081
+  750  localhost
+  751  hostname -h
+  752  ip addr
+  753  ip 
+  754  ip route
+  755  curl 192.168.1.12:8081
+  756  curl http://localhost:8081
+  757  curl 127.0.0.1:8081
+  758  hostname -h
+  759  hostname -i
+  760  hostname 
+  761  hostname -I
+  762  cat /etc/host
+  763  cat /etc/hosts
+  764  curl https://ifconfig.me
+  765  fastfetch
+  766  hostname -i
+  767  cat /etc/hosts
+  768  hostname -I
+  769  curl https://ifconfig.me
+  770  ip link
+  771  ip addr
+  772  dig google.com
+  773  curl https://ifconfig.me
+  774  dig youtube.com
+  775  dig vihaanaitech.com
+  776  cat /etc/hosts
+  777  curl http://localhost:8081
+  778  curl 127.0.0.1:8081
+  779  dig localhost
+  780  dig 127.0.0.2
+  781  hostname -I 
+  782  dig {hostname -I}
+  783  cat /etc/hosts
+  784  unFree nix-shell -p terraform
+  785  clear
+  786  exit
+  787  hostname 
+  788  hostname 127.0.0.1
+  789  curl https://ipconfig.md
+  790  curl https://ipconfig.me
+  791  kubectl get pods -n namespace-1 -o wide 
+  792  ls
+  793  y
+  794  lsl
+  795  glow Ip_tree_short.md
+  796  glow
+  797  kubectl scale deployment/dep-1 -n namespace-1 --replicas=1
+  798  kubectl get pods -n namespace-1 -o wide
+  799  kubectl  scale deployment/dep-1 -n namespace-1 --replicas=1
+  800  kubectl  scale deployment/dep-1 -n namespace-1 --replicas 4
+  801  kubectl get pods  -n namespace-1 -o wide
+  802  \t\t\tkubectl scale deployment dep-1 -n namespace-1 --replicas 12
+  803  \t\tkubectl get pods -n namespace-1 -o wide
+  804  \t\t\t\tkubectl scale deployment dep-1 -n namespace-1 --replicas 2
+  805  \t\tkubectl get pods -n namespace-1 -o wide
+  806  kubectl set image deployments dep-1 -n namespace-1 engin=nginx:1.2
+  807  kubectl describe pods -n namespace-1 dep-1-7d74c8577b-hhvg6
+  808  history 
+  809  kubectl get pods -n namespace-1 dep-1-7d74c8577b-hhvg6 -o jsonpath='{.spec.containers[*].name}'
+  810  \tkubectl set image deployments dep-1 -n namespace-1 nginx-app=nginx:1.2
+  811  kubectl get pods -n namespace-1
+  812  \tkubectl set image deployments dep-1 -n namespace-1 nginx-app=nginx:1.27.3
+  813  kubectl get pods -n namespace-1
+  814  tt
+  815  y
+  816  nvim
+  817  lsd
+  818  ls
+  819  lsl
+  820  y
+  821  lsl
+  822  kind get clusters
+  823  kind delete cluster --name project1
+  824  kind get clusters
+  825  kind delete cluster --name project1
+  826  kind get clusters
+  827  ls
+  828  nvim
+  829  y
+  830  \t\tkind create cluster --name project1 --config ./2_kind_cluster1-3.yml
+  831  kind get nodes
+  832  kubectl get nodes
+  833  kubectl get nodes -o wide
+  834  podman exec -it project1-worker 
+  835  podman exec -it project1-worker -- sh
+  836  podman exec -it project1-worker sh -c 
+  837  podman exec -it project1-worker sh 
+  838  lsl
+  839  y
+  840  kubectl get nodes
+  841  kubectl apply -f namespace.yml
+  842  kubectl get ns 
+  843  kubectl describe ns namespace-1
+  844  kubectl apply -f deployment.yml
+  845  kubectl get pods -n namespace-1
+  846  kubectl apply -f pod.yml
+  847  kubectl get pods -n namespace-1
+  848  kubectl get pods -n namespace-1 -o wide 
+  849  podman exec -it project1-worker2
+  850  podman exec -it project1-worker2 sh
+  851  kubectl get pods -n namespace-1 -o wide 
+  852  \tpodman exec -it project1-worker2 sh
+  853  kubectl get pods -n namespace-1 -o wide 
+  854  kubectl get nodes
+  855  podman get pods -o wide
+  856  podman ps
+  857  kubectl get nodes -o wide
+  858  kubectl get pods -n namespace-1 -o wide 
+  859  kubectl get deployment -n namespace-1
+  860  kubectl get deployment -n namespace-1 -o wide
+  861  \t\t\t\t\t\tkubectl scale deployment dep-1 -n namespace-1 --replicas 10
+  862  kubectl get pods -n namespace-1 -o wide 
+  863  podman exec -it project1-worker2 sh
+  864  exit
+  865  k9s
+  866  \tkubectl port-forward deployments/dep-1 nginx-app 8081:80
+  867  kubectl get deployment -n namespace-1 -o wide
+  868  \tkubectl port-forward -n namespace-1 deployments/dep-1 8081:80
+  869  \tkubectl port-forward -n namespace-1 deployments/dep-1 8082:80
+  870  curl http://localhost:8082
+  871  history 1000
+  872  history -h
+  873  history --help
+  874  history
+  875  history -c 100
+  876  history 100
+  877  history 999
+  878  history 500
+  879  history 700
+  880  history 900
+  881  history 800
+  882  history 899
+  883  history 850
+  884  history 700
+  885  history
+  886  history --all
+  887  history -a
+  888  fc -l
+  889  lsl
+  890  cd
+  891  ls
+  892  lsl
+  893  cat .bash_history
+  894  history 
+  895  history 1..893
+  896  history 440..894 >> history_today.txt
+  897  lsl
+  898  cat history_today.txt
+  899  y
+  900  kubectl delete -f deployment.yml
+  901  lsl
+  902  kubectl get pods -n namespace-1 -o wide
+  903  kubectl apply -f replicaset.yml
+  904  kubectl delete -f replicaset.yml
+  905  kubectl apply -f replicaset.yml
+  906  kubectl get pods
+  907  kubectl get replica
+  908  kubectl get replicaset
+  909  kubectl scale replicaset replicaset-1 --replicas 2
+  910  kubectl get pods
+  911  \t\tkubectl set image replicasets replicaset-1 -n default nginx-app nginx:latest
+  912  \t\tkubectl set image -n default replicaset-1 nginx-app=nginx:latest
+  913  \t\tkubectl set image replicasets replicaset-1 -n default nginx-app=nginx:latest
+  914  kubectl get pods
+  915  \t\tkubectl set image replicasets replicaset-1 -n default nginx-app=nginx:1.27.3
+  916  kubectl get pods
+  917  kubectl delete -f replicaset.yml
+  918  ls
+  919  y
+  920  kubectl apply -f daemonset.yml
+  921  kubectl get pods
+  922  kubectl logs daemonset-1-4llkw
+  923  kubectl logs -n default daemonset-1-4llkw
+  924  kubectl describe daemonsets.apps
+  925  kubectl describe pods daemonset-1-4llkw
+  926  kubectl delete -f daemonset.yml
+  927  kubectl apply -f daemonset.yml
+  928  kubectl get pods
+  929  \t\tkubectl exec -it -n default daemonset/daemonset-1 sh
+  930  \t\tkubectl exec -it -n default daemonset-1-4lcz5 sh
+  931  \t\tkubectl exec -it -n default daemonset-1-4lcz5 -- bash
+  932  \t\tkubectl exec -it -n default daemonset-1-4lcz5 busybox -- sh
+  933  kubectl get pods
+  934  kubectl delete -f daemonset.yml
+  935  kubectl apply -f daemonset.yml
+  936  kubectl get pods
+  937  kubectl logs -n default daemonset-1-4llkw
+  938  kubectl describe pods daemonset-1-4llkw
+  939  kubectl logs -n default daemonset-1-nnd2p
+  940  kubectl describe pods daemonset-1-nnd2p
+  941  kubectl get pods
+  942  kubectl describe pods daemonset-1-nnd2p
+  943  kubectl logs -n default daemonset-1-nnd2p
+  944  kubectl describe pods daemonset-1-xnb4z
+  945  kubectl delete -f daemonset.yml
+  946  kubectl apply -f daemonset.yml
+  947  kubectl get pods
+  948  kubectl delete -f daemonset.yml
+  949  kubectl apply -f daemonset.yml
+  950  kubectl get pods
+  951  kubectl delete -f daemonset.yml
+  952  kubectl get pods
+  953  kubectl apply -f daemonset.yml
+  954  kubectl get pods
+  955  kubectl describe pods daemonset-1-ssxfw
+  956  kubectl delete -f daemonset.yml
+  957  kubectl apply -f daemonset.yml
+  958  kubectl get pods
+  959  kubectl delete -f daemonset.yml
+  960  kubectl apply -f daemonset.yml
+  961  kubectl get pods
+  962  kubectl logs daemonset-1-fsg7l
+  963  kubectl describe pods daemonset-1-lwqlg
+  964  kubectl delete -f daemonset.yml
+  965  kubectl get pods
+  966  kubectl get pods --all-namespaces
+  967  kubectl get daemonsets.apps
+  968  kubectl apply -f daemonset.yml
+  969  kubectl get pods
+  970  kubectl get pods -o wide
+  971  kubectl delete -f daemonset.yml
+  972  kubectl apply -f daemonset.yml
+  973  kubectl get pods 
+  974  kubectl get pods -o wide
+  975  kubectl get pods 
+  976  kubectl delete -f daemonset.yml
+  977  kubectl get pods 
+  978  kubectl apply -f daemonset.yml
+  979  kubectl get pods 
+  980  kubectl delete -f daemonset.yml
+  981  tt
+  982  exit
+  983  lsl
+  984  kubeclt get ns
+  985  kubectl get ns
+  986  kubectl apply -f job.yml
+  987  kubectl get pods
+  988  kubeclt get pods -n namespace.yml
+  989  kubectl get pods -n namespace-1
+  990  kubectl get pods -n namespace-1 -o wide
+  991  kubectl logs -n namespace-1 demo-job-1-lkx7h
+  992  kubectl get jobs.batch
+  993  kubectl get job
+  994  kubectl delete -f job.yml
+  995  kubectl apply -f job.yml
+  996  kubectl get pods -n namespace-1 -o wide
+  997  kubectl exec -it -n namespace-1 jobs/demo-job-1
+  998  kubectl get pods -n namespace-1 -o wide
+  999  kubectl exec -it -n namespace-1 demo-job-1-m56nx sh
+ 1000  kubectl logs -n namespace-1 demo-job-1-m56nx
+ 1001  clear
+ 1002  kubectl delete -f job.yml
+ 1003  kubectl apply -f job.yml
+ 1004  kubectl get pods -n namespace-1 -o wide
+ 1005  kubectl delete -f job.yml
+ 1006  kubectl get pods
+ 1007  kubectl get pods -n namespace-1 -o wide
+ 1008  speaker-test -t sine -f 440\n
+ 1009  aplay -l
+ 1010  kubectl apply -f namespace.yml
+ 1011  kubectl get ns
+ 1012  lsl
+ 1013  clear
+ 1014  lsl
+ 1015  kubectl get ns
+ 1016  kubectl delete -f pod.yml
+ 1017  kubectl delete -f namespace.yml
+ 1018  kind get clusters
+ 1019  kind delete cluster project1
+ 1020  kind delete cluster --name project1
+ 1021  clear
+ 1022  exit
+ 1023  clear
+ 1024  tt
+ 1025  y
+ 1026  nvim
+ 1027  exit
+ 1028  lsl
+ 1029  clear
+ 1030  tt
+ 1031  nvim
+ 1032  y
+ 1033  nvimn
+ 1034  nvim
+ 1035  y
+ 1036  kubectl 
+ 1037  kubectl get pods
+ 1038* lsd
+ 1039* y
+ 1040* \t\t\t\tkind create cluster --name P5 --config=./2_kind_cluster1-3.yml
+ 1041* \t\t\t\tkind create cluster --name p5 --config 2_kind_cluster1-3.yml
+ 1042* k9s
+ 1043  kubectl apply -f namespace.yml
+ 1044* kubectl getns 
+ 1045* kubectl get ns
+ 1046* k9s
+ 1047* lsd
+ 1048* podman ls
+ 1049* podman ps 
+ 1050* kubectl get api-resources
+ 1051* kubectl get apiservices.apiregistration.k8s.io
+ 1052* kubectl get apiservices-resources
+ 1053* klh
+ 1054* kubectl api-resources
+ 1055* ls
+ 1056* y
+ 1057* kubectl apply -f deployment.yml
+ 1058* kubectl delete -f deployment.yml
+ 1059* kubectl apply -f deployment.yml
+ 1060* podman search nginx
+ 1061* kubectl delete -f deployment.yml
+ 1062* kubectl create ng nginx
+ 1063* kubectl apply -f deployment.yml
+ 1064* history
+ 1065* history 1..1063 | grep image
+ 1066* kubectl get deployments.apps
+ 1067* kubectl get deployments
+ 1068* kubectl get pods
+ 1069* kubectl get deployments -n ns-1
+ 1070* kubectl describe deployments.apps -n ns-1
+ 1071* kubectl get pods -n ns-1
+ 1072* kubectl get pods -n ns-1 deployment-1-nginx-5c495c6fc5-gmfwk -o jsonpath='{.spec.containers[*}.name}'
+ 1073* history 1..1000 | grep *.containers*
+ 1074* history 1..1000 | grep .containers
+ 1075* kubectl get pods -n ns-1 deployment-1-nginx-5c495c6fc5-gmfwk -o jsonpath='{.conf.containers[*}.name}'
+ 1076* kubectl get pods -n ns-1 deployment-1-nginx-5c495c6fc5-gmfwk -o jsonpath='{.spec.containers[*].name}'
+ 1077* kubectl get deployments -n ns-1
+ 1078* kubectl set image deployments -n ns-1 deployment-1-nginx --nginx-app-container=nginx:latest
+ 1079* kubectl set image deployments -n ns-1 deployment-1-nginx nginx-app-container=nginx:latest
+ 1080* kubectl get pods -n ns-1
+ 1081* kubectl describe pod -n ns-1 deployment-1-nginx-856cc688f4-s6n8r
+ 1082* ls
+ 1083* kubectl apply -f daemonset.yml
+ 1084* kubectl get pods -n ns-2 -o wide 
+ 1085* kubectl apply -f daemonset.yml
+ 1086* kubectl get pods -n ns-2 -o wide 
+ 1087* kubectl delete -f daemonset.yml
+ 1088* kubectl apply -f daemonset.yml
+ 1089* kubectl get pods -n ns-1 -n ns-2
+ 1090* kubectl get pods -n ns-1, ns-2
+ 1091* kubectl get pods -n ns-1 
+ 1092* kubectl get pods -n ns-2
+ 1093* k9s
+ 1094* podman ps
+ 1095* podman exec -it p5-worker
+ 1096* podman exec -it p5-worker sh
+ 1097* for c in $(podman ps -q); do podman exec $c apt update -y; done
+ 1098* for c in $(podman ps -q); do podman exec $c apt update -y && podman exec $c apt upgrade -y; done
+ 1099* podman exec -it p5-worker sh
+ 1100* podman ps
+ 1101* hostname
+ 1102* podman exec -it p5-worker sh
+ 1103* \tfor c in $(podman ps -q) do podman exec $c apt install cowsay && podman exec $c cowsay $(cat /etc/hostname); done
+ 1104* \t\tfor c in $(podman ps -q) do podman exec $c apt update -y && podman exec $c apt upgrade -y; done 
+ 1105* \tfor c in $(podman ps -q); do podman exec $c apt install cowsay && podman exec $c cowsay $(cat /etc/hostname); done
+ 1106* \tfor c in $(podman ps -q); do podman exec $c apt install cowsay -y && podman exec $c cowsay $(cat /etc/hostname); done
+ 1107* \tfor c in $(podman ps -q); do podman exec $c apt install cowsay -y && podman exec $c cowsay \$(cat /etc/hostname); done
+ 1108* \tfor c in $(podman ps -q); do podman exec $c apt install cowsay -y && podman exec $c sh -c 'cowsay $(cat /etc/hostname)' ; done
+ 1109* for c in $(podman ps -q); do \npodman exec apt update -y \npodman exec apt upgrade -y \npodman exec apt install cowsay -y
+ 1110* for c in $(podman ps -q); do\npodman exec $c apt update -y\npodman exec $c apt upgrade -y\npodman exec $c apt insall cowsay\npodman exec sh -c 'PATH=$PATH:/usr/games/cowsay'
+ 1111* for c in $(podman ps -q); do \npodman exec $c apt update -y\npodman exec $c apt upgrade -y \npodman exec $c apt install cowsay \npodman exec $c sh -c 'PATH=$PATH:/usr/games/cowsay'\npodman exec $c sh -c 'cowsay $(cat /etc/hostname)'\ndone 
+ 1112* for c in $(podman ps -q); do \npodman exec $c apt update -y\npodman exec $c apt upgrade -y \npodman exec $c apt install cowsay \npodman exec $c sh -c 'PATH=$PATH:/usr/games/cowsay'\npodman exec $c sh -c 'echo $PATH'\npodman exec $c sh -c 'cowsay $(cat /etc/hostname)'\ndone 
+ 1113* for c in $(podman ps -q); do \npodman exec $c apt update -y\npodman exec $c apt upgrade -y \npodman exec $c apt install cowsay \npodman exec $c sh -c '/usr/games/cowsay $(cat /etc/hostname'\ndone 
+ 1114* for c in $(podman ps -q); do \npodman exec $c apt update -y\npodman exec $c apt upgrade -y \npodman exec $c apt install cowsay \npodman exec $c sh -c '/usr/games/cowsay $(cat /etc/hostname)'\ndone 
+ 1115* for c in $(podman ps -q); do \npodman exec -d $c apt update -y\npodman exec -d $c apt upgrade -y \npodman exec -d $c apt install cowsay \npodman exec $c sh -c '/usr/games/cowsay $(cat /etc/hostname)'\ndone 
+ 1116* history 
+ 1117* \t for p in $(podman ps -q)do ;\npodman exec $p apt purge cowsay -v
+ 1118* echo $0
+ 1119* echo $?
+ 1120* for p in $(podman ps -q ); \ndo \npodman exec -d $p apt install cowsay -y\npodman exec $p sh -c '/usr/games/cowsay $(cat /etc/hostname)'\npodman exec $p apt purge -v cowsay -y ; done 
+ 1121* for p in $(podman ps -q ); \ndo \npodman exec -d $p apt install cowsay -y\npodman exec $p sh -c '/usr/games/cowsay $(cat /etc/hostname)'\npodman exec $p apt purge cowsay -yv ; done 
+ 1122* for p in $(podman ps -q ); \ndo \npodman exec $p apt install cowsay -y\npodman exec $p sh -c '/usr/games/cowsay $(cat /etc/hostname)'\npodman exec $p apt purge cowsay -yv ; done 
+ 1123* podman exec -it p5-worker sh 
+ 1124* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay && podman exec $x sh -c \n
+ 1125* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay;\ndone 
+ 1126* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay -y ;\ndone 
+ 1127* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y >> dev/null && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay -y ;\ndone 
+ 1128* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y > dev/null && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay -y ;\ndone 
+ 1129* podman inspect -f '{{.Name}}' p5-worker
+ 1130* podman inspect p5-worker
+ 1131* podman inspect p5-worker | grep Name
+ 1132* podman inspect p5-worker | grep network
+ 1133* podman inspect p5-worker | grep ports
+ 1134* podman inspect p5-worker | grep port
+ 1135* history
+ 1136  history 
