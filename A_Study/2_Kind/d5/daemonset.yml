@@ -1,43 +1,48 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: daemonset-1
-  namespace: ns-2
+  name: nginxcont
+  namespace: nspace-1
   labels:
-    app: daemonset--busybox-podtemp--busybox-app
+    app: nginxcont
 spec:
   selector:
     matchLabels:
-      app: busybox-podtemp--busybox-app
+      app: nginxcont
   template:
     metadata:
-      # annotations:
-      #   kubectl.kubernetes.io/default-container:  myapp
+      annotations:
+        kubectl.kubernetes.io/default-container:  nginxcont
       labels:
-        app: busybox-podtemp--busybox-app
+        app: nginxcont
     spec:
       tolerations:
       # this toleration is to have the daemonset runnable on master nodes
       # remove it if your masters can't run pods
-      # - key: node-role.kubernetes.io/master
-      #   effect: NoSchedule
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
       containers:
-      - name: busybox-app
-        image: busybox:latest
-        command: ["sleep","3600"]
+      - name: nginxcont
+        image: nginx:latest
         resources:
           limits:
             memory: 200Mi
           requests:
             cpu: 100m
             memory: 200Mi
-        volumeMounts:
-        - name: localtime
-          mountPath: /etc/localtime
-      terminationGracePeriodSeconds: 30
-      volumes:
-      - name: localtime
-        hostPath:
-          path: /usr/share/zoneinfo/Asia/Taipei
+        ports:
+        - containerPort: 443
+          name: https
+        - containerPort: 80
+          name: http
+      #   volumeMounts:
+      #   - name: localtime
+      #     mountPath: /etc/localtime
+      # terminationGracePeriodSeconds: 30
+      # volumes:
+      # - name: localtime
+      #   hostPath:
+      #     path: /usr/share/zoneinfo/Asia/Taipei
 ---
 
