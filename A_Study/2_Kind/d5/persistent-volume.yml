@@ -3,14 +3,16 @@ apiVersion: v1
 metadata: 
   name: vol-1
   # namespace: nspace-1 # R: in PersistentVolumes no need for NAMESPACES.
-  lables:
+  labels:
     app: group-1
 spec:
+  storageClassName: pv-vol-1 # Y: THIS NAME MUST MATCH PersistentVolumeClaim. ⭐⭐⭐⭐⭐
   capacity:
     storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain  # Y: THIS NAME MUST MATCH PersistentVolumeClaim. ⭐⭐⭐⭐⭐
-  StorageClassName: pv-vol-1
   hostPath:
     path: /tmp/kind/pv-vol-1
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain  
+
+
