@@ -1,0 +1,45 @@
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "busybox1"
+  namespace: namespace-1
+  # labels:
+  #   annotations:
+  #     kubectl.kubernetes.io/default-container: busybox
+  #   app: "busybox"
+spec:
+  containers:
+  - name: engin
+    image: "busybox:latest"
+    command: ["sleep","3600"] # without cmd the contaienr will not run
+    resources:
+      limits:
+        cpu: 200m
+        memory: 500Mi
+      requests:
+        cpu: 100m
+        memory: 200Mi
+    # env:
+    # - name: DB_HOST
+    #   valueFrom:
+    #     configMapKeyRef:
+    #       name: myapp
+    #       key: DB_HOST
+    ports:
+    - containerPort: 80
+      hostPort: 9080
+      name: http
+    - containerPort: 443
+      hostPort: 9443
+      name: https
+  #   volumeMounts:
+  #   - name: localtime
+  #     mountPath: /etc/localtime
+  # volumes:
+  #   - name: localtime
+  #     hostPath:
+  #       path: /usr/share/zoneinfo/Asia/Taipei
+  # restartPolicy: Always
+---
+

@@ -1,0 +1,19 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: brush-twice-a-day
+  namespace: namespace-2
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: jobname
+            image: busybox
+            args: ['/bin/sh', '-c', 'date; echo Hello from the Kubernetes cluster']
+          restartPolicy: OnFailure
+---
+
