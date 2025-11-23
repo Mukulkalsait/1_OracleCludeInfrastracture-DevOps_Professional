@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol-2
+  labels:
+    app: group-1
+spec:
+  storageClassName: pv-vol-2
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /tmp/kind/pv-vol-2/
+  accessModes:   
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
