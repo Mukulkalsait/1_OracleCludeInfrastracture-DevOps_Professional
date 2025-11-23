@@ -1,0 +1,16 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata: 
+  name: vol-nspace-1
+  # namespace: nspace-1 # R: in PersistentVolumes no need for NAMESPACES.
+  labels:
+    app: group-1
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  StorageClassName: local-storage # Y: THIS NAME MUST MATCH PersistentVolumeClaim. ⭐⭐⭐⭐⭐
+  hostPath:
+    path: /tmp/kind 
