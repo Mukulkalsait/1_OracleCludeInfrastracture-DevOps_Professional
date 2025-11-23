@@ -2,10 +2,11 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: vol-1-pvc # Y: give thi into the PODTEMP.
+  namespace: nspace-1
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 500Mi
+      storage: 1Gi
   storageClassName: pv-vol-1 # Y: matches the name of pv storageClassName

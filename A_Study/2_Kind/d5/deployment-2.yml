@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: debianslim-cont
-        image: "debian-slim:latest"
+        image: debian:slim
         command:
         - sh 
         - -c 
@@ -32,7 +32,7 @@ spec:
           cp /etc/hostname /tmp/kind/ ;
           for true; do sleep 3600; done
         resources:
-          request:
+          requests:
             cpu: 50m
             memory: 100Mi
           limits:
@@ -40,9 +40,9 @@ spec:
             memory: 120Mi
         ports:
         - containerPort: 80
-          name: TCP
+          name: http
         - containerPort: 443
-          name: TCP
+          name: https
         volumeMounts:
         - mountPath: /tmp/kind/
           name: volume-for-kind-debian
