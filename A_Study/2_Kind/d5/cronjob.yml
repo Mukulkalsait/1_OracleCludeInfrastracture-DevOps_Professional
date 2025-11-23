@@ -5,7 +5,7 @@ metadata:
   name: p5-cronjob
   namespace: nspace-2
 spec:
-  schedule: "*/1 * * * *"
+  schedule: "1 */1 * * *"
   jobTemplate:
     spec:
       completions: 4 # total number of containers we want to create
