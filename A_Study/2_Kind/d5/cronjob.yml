@@ -3,12 +3,13 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: p5-cronjob
-  namespace: 
+  namespace: nspace-2
 spec:
   schedule: "*/1 * * * *"
-
   jobTemplate:
     spec:
+      completions: 4 # total number of containers we want to create
+      parallelism: 2  # total number of containers we want to run at a time.
       template:
         spec:
           containers:
@@ -21,9 +22,9 @@ spec:
                   echo "󰁯 Backup Started 🚀";
                   mkdir -p /backups && 
                   mkdir -p /data &&
-                  cp -r /data /backups
+                  cp -r /data /backups;
                   echo "󰁯 Backup Completed !!!";
-            volumeMounst: 
+            volumeMounts: 
               - name: data-volume  # G: volumme 1 name taken here for mounting
                 mountPath: /data
               - name: backup-volume # G: volumme 2 name taken here for mounting
@@ -37,7 +38,7 @@ spec:
                 type: DirectoryOrCreate
             - name: backup-volume  # Y:  volume name 2
               hostPath:
-                path: /backukps
+                path: /backups
                 type: DirectoryOrCreate
 
 ---
