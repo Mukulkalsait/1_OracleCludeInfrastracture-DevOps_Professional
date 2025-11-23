@@ -1,35 +1,84 @@
-kind: Deployment
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: deployment-1-nginx
-  namespace: ns-1
+  name: dep-1-busybox
+  namespace: nspace-2
+  labels:
+    app: group-1
 spec:
   replicas: 6
   selector:
     matchLabels:
-      app: nginx-deployment-6r 
+      app: podtemp-dep1--busyboxcont  # G: pod+template-<deploymentName>--<container1Name>--<container2Name>
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
   template:
     metadata:
+      # annotations:
+      #   kubectl.kubernetes.io/default-container:  myjob
       labels:
-        app: nginx-deployment-6r 
+        app: podtemp-dep1--busyboxcont  # Y: pod+template-<deploymentName>--<container1Name>--<container2Name>
     spec:
+      # initContainers:
+        # Init containers are exactly like regular containers, except:
+          # - Init containers always run to completion.
+          # - Each init container must complete successfully before the next one starts.
       containers:
-        - name: nginx-app-container
-          image: nginx/latest
-          resources:
-            requests:
-              cpu: 100m
-              memory: 100Mi
-            limits:
-              cpu: 120m
-              memory: 150Mi
-          ports:
-            - containerPort: 80
-              name: http
-            - containerPort: 443
-              name: https
+      - name: busyboxcont
+        image: busybox:latest
+        command: ["sh", "-c", "while true; do sleep 3600; done"]
+        imagePullPolicy: 
+        resources:
+          requests:
+            cpu: 50m
+            memory: 50Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        livenessProbe:
+            exec:
+              command: 
+                - sh 
+                - -c 
+                - > 
+                  echo "alive"
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+        readinessProbe:
+            exec:
+              command: 
+                - sh 
+                - -c 
+                - > 
+                  echo "alive"
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+        # env:
+        # - name: DB_HOST
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: myjob
+        #       key: DB_HOST
+        ports:
+        - containerPort: 80
+          name: http
+        - containerPort: 443
+          name: https
+      #   volumeMounts:
+      #   - name: localtime
+      #     mountPath: /etc/localtime
+      # volumes:
+      #   - name: localtime
+      #     hostPath:
+      #       path: /usr/share/zoneinfo/Asia/Taipei
       restartPolicy: Always
-      
-
-
+---
 
