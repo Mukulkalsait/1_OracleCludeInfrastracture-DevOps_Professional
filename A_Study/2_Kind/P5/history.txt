@@ -1,3 +1,5 @@
+    895 onwords
+    -----------
     1  passwd
     2  sudo passwd
     3  exit
@@ -1099,6 +1101,10 @@
  1099* podman exec -it p5-worker sh
  1100* podman ps
  1101* hostname
+
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ special cmds where i write and ran scrpts directly in terminal 
+
  1102* podman exec -it p5-worker sh
  1103* \tfor c in $(podman ps -q) do podman exec $c apt install cowsay && podman exec $c cowsay $(cat /etc/hostname); done
  1104* \t\tfor c in $(podman ps -q) do podman exec $c apt update -y && podman exec $c apt upgrade -y; done 
@@ -1127,6 +1133,9 @@
  1127* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y >> dev/null && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay -y ;\ndone 
  1128* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y > dev/null && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay -y ;\ndone 
  1129* podman inspect -f '{{.Name}}' p5-worker
+
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
  1130* podman inspect p5-worker
  1131* podman inspect p5-worker | grep Name
  1132* podman inspect p5-worker | grep network
