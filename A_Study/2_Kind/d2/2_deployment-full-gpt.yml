@@ -1,0 +1,152 @@
+
+# ---------------------------------------------------------
+# 🧱 Backend API Deployment (Clean, Maintainable & Scalable)
+# ---------------------------------------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-api-deployment             # Unique Deployment name
+  namespace: default
+  labels:
+    app: backend-api                       # App family label
+    tier: backend                          # Logical grouping (frontend/backend/db)
+  annotations:
+    description: "Deployment for backend API service"
+spec:
+  # ---------------------------------------------------------
+  # 👥 Number of pod replicas (can scale easily)
+  # ---------------------------------------------------------
+  replicas: 3
+
+  # ---------------------------------------------------------
+  # 🎯 Which Pods this Deployment manages
+  # ---------------------------------------------------------
+  selector:
+    matchLabels:
+      app: backend-api                     # Must match template metadata.labels
+
+  # ---------------------------------------------------------
+  # 🧩 Template: Defines what each Pod looks like
+  # ---------------------------------------------------------
+  template:
+    metadata:
+      labels:
+        app: backend-api                   # Label used for Services and selectors
+        tier: backend
+    spec:
+      containers:
+        - name: backend-container          # Name inside the Pod (used in logs/probes)
+          image: debian-slim:latest        # Replace with your actual app image
+          imagePullPolicy: IfNotPresent     # Pull image only if not already cached
+
+          # -------------------------------------------------
+          # 🌐 Ports exposed by the container
+          # -------------------------------------------------
+          ports:
+            - containerPort: 8080
+              name: http
+
+          # -------------------------------------------------
+          # ⚙️ Load environment variables from a ConfigMap
+          # -------------------------------------------------
+          envFrom:
+            - configMapRef:
+                name: backend-api-config    # ConfigMap must exist in same namespace
+
+          # -------------------------------------------------
+          # 💪 Define resource limits and requests
+          # -------------------------------------------------
+          resources:
+            requests:
+              cpu: 150m
+              memory: 256Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+
+          # -------------------------------------------------
+          # ❤️ Health checks to ensure Pod is healthy
+          # -------------------------------------------------
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 15
+
+          # -------------------------------------------------
+          # 🕓 Mount a timezone configuration (portable way)
+          # -------------------------------------------------
+          volumeMounts:
+            - name: timezone-config
+              mountPath: /etc/localtime
+              readOnly: true
+
+      # -----------------------------------------------------
+      # 📦 Define volumes to be mounted in the container
+      # -----------------------------------------------------
+      volumes:
+        - name: timezone-config
+          configMap:
+            name: timezone-data             # ConfigMap providing localtime file
+            items:
+              - key: localtime
+                path: localtime
+
+      # -----------------------------------------------------
+      # 🔁 Restart policy for containers
+      # -----------------------------------------------------
+      restartPolicy: Always
+
+
+
+
+#-------------------------------------------------------------end------------------------------------------------------------------------------------
+
+
+
+
+
+  # Y:  🧩 Example Matching ConfigMap (for clarity)
+  #
+  # R:
+  # apiVersion: v1
+  # kind: ConfigMap
+  # metadata:
+  #   name: backend-api-config
+  # data:
+  #   DB_HOST: "db-service"
+  #   DB_PORT: "5432"
+  #   ENV: "production"
+  #
+
+  # Y: 🧩 Example Matching Service (for networking)
+  #
+  # R:
+  # apiVersion: v1
+  # kind: Service
+  # metadata:
+  #   name: backend-api-service
+  # spec:
+  #   selector:
+  #     app: backend-api                      # Matches Pods via label
+  #   ports:
+  #     - name: http
+  #       port: 80                            # ClusterIP port
+  #       targetPort: 8080                    # Container port
+  #   type: ClusterIP                         # Default internal service type
+  
+  # Y: 🧭 Folder Structure (recommended)
+  #
+  # R:
+  # k8s/
+  # ├── deployment-backend.yaml
+  # ├── service-backend.yaml
+  # ├── configmap-backend.yaml
+  # └── secret-backend.yaml   # if needed later
