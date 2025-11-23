@@ -1,0 +1,44 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: p5-cronjob
+  namespace: 
+spec:
+  schedule: "*/1 * * * *"
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: date-printsave--busybox
+            image: busybox
+            command: 
+                - sh 
+                - -c 
+                - > 
+                  echo "󰁯 Backup Started 🚀";
+                  mkdir -p /backups && 
+                  mkdir -p /data &&
+                  cp -r /data /backups
+                  echo "󰁯 Backup Completed !!!";
+            volumeMounst: 
+              - name: data-volume  # G: volumme 1 name taken here for mounting
+                mountPath: /data
+              - name: backup-volume # G: volumme 2 name taken here for mounting
+                mountPath: /backups
+          restartPolicy: OnFailure
+
+          volumes: 
+            - name: data-volume # Y:  volume name 1
+              hostPath:
+                path: /data
+                type: DirectoryOrCreate
+            - name: backup-volume  # Y:  volume name 2
+              hostPath:
+                path: /backukps
+                type: DirectoryOrCreate
+
+---
+

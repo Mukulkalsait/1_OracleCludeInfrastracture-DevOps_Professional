@@ -1,0 +1,19 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: ns-1
+
+---
+
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: ns-2
+
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: ns-3
+
+---
