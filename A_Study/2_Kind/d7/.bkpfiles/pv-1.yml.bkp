@@ -1,0 +1,16 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata: 
+  name: pv-vol-1
+  # namespace: node-app #R: NOT NEEDED HERE |===| ⭐⭐⭐⭐⭐
+  labels:
+    app: node-app 
+spec:
+  # storageClassName: pv-vol-1 R: not needed for VolumeName Bindign   ⭐⭐⭐⭐⭐
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /home/mukuldk/k8s-storage/pv-vol-1/
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
