@@ -1,0 +1,111 @@
+# B: ----------------------------------
+# 1.PersistentVolume
+# -------------------------------------
+
+kind: PersistentVolume
+apiVersion: v1
+metadata: 
+  name: pv-vol-1--mongodb # G: 1 
+  # labels:
+  #   app: label-nodeapp--mongodb
+  # namespace: node-app-1 #R: NO NEEDED |===| ⭐⭐⭐⭐⭐
+spec:
+  # storageClassName: pv-vol-1 R: not needed for VolumeName Bindign   ⭐⭐⭐⭐⭐
+  hostPath:
+    path: /home/mukuldk/k8s-storage/pv-vol-1/
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+---
+
+# B: ----------------------------------
+# 2.PersistentVolumeClaim
+# -------------------------------------
+# https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pv-vol-1--mongodb #G: 2 
+  namespace: node-app-1
+  # labels:
+  #   app: label-nodeapp--mongodb
+spec:
+  # AKS: default,managed-premium
+  # GKE: standard
+  # EKS: gp2 (custom)
+  # Rook: rook-ceph-block,rook-ceph-fs
+  storageClassName: ""
+  volumeName: pv-vol-1--mongodb # Y: This must match |G=>1 |
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+
+# B: ----------------------------------
+# 3.StatefulSet
+# -------------------------------------
+# https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+ 
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo
+  namespace: node-app-1
+spec:
+  replicas: 1 # by default is 1
+  serviceName: "mongo-service" # Y: Must Match |G=> |
+  selector:
+    matchLabels:
+      app: podtemp-mongocont # Y: Must Match |G=>4|
+  template:
+    metadata:
+      # annotations:
+      #   kubectl.kubernetes.io/default-container:  mongo
+      labels:
+        app: podtemp-mongocont # G: 4
+    spec:
+      # terminationGracePeriodSeconds: 10
+      containers:
+      - name: mongocont
+        # image: mongo:6.0.5 i dont have avx in my pc so using 4.4
+        image: mongo:4.4
+        ports:
+        - containerPort: 27017
+          name: mongo
+        volumeMounts:
+          - name: mongodb-vol # Y: This must match |G=>3|
+            mountPath: /data/db # defaault mongo storege dir.
+      volumes:
+        - name: mongodb-vol  # G: 3
+          persistentVolumeClaim:
+             claimName: pv-vol-1--mongodb # Y: This Must Match |G=>2|
+--- 
+
+# B: ----------------------------------
+# 4.Service
+# -------------------------------------
+# https://kubernetes.io/docs/concepts/services-networking/service/
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service # G: 5
+  namespace: node-app-1
+spec:
+  clusterIP: None # R: VERY IMPORTANT – makes it a *Headless Service* Allows each pod to have its own DNS like: mongo-0.mongo-service.node-app-1.svc.cluster.local
+  selector:
+    app: podtemp-mongocont
+  # type: 
+  ports:
+  - name: mongodb
+    protocol: TCP
+    port: 27017
+    targetPort: 27017
+    # nodePort: 30001
+---
+
