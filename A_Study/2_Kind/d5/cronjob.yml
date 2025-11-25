@@ -3,7 +3,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: p5-cronjob
-  namespace: nspace-2
+  namespace: nspace-1
 spec:
   schedule: "1 */1 * * *"
   jobTemplate:
