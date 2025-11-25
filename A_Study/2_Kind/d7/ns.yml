@@ -1,0 +1,13 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: node-app-1
+    
+
+--- 
+
+kind: Namespace 
+apiVersion: v1
+metadata: 
+  name: python-app-2
+
