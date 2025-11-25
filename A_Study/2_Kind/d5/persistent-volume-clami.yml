@@ -10,3 +10,4 @@ spec:
     requests:
       storage: 1Gi
   storageClassName: pv-vol-1 # Y: matches the name of pv storageClassName
+
