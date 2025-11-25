@@ -23,14 +23,14 @@ spec:
     spec:
       containers:
       - name: debianslim-cont
-        image: debian:slim
+        image: debian:latest
         command:
         - sh 
         - -c 
         - > 
           mkdir -p /tmp/kind/ ;
           cp /etc/hostname /tmp/kind/ ;
-          for true; do sleep 3600; done
+          while true; do sleep 3600; done
         resources:
           requests:
             cpu: 50m
