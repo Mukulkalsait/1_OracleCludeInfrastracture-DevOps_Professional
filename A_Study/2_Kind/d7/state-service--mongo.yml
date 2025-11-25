@@ -1,0 +1,76 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: mongo
+  namespace: node-app-1
+spec:
+  replicas: 1 # by default is 1
+  serviceName: mongo-service   # Y:  REQUIRED: Headless Service name for stable DNS
+  selector:
+    matchLabels:
+      app: podtemp-mongocont #Y: has to match .spec.template.metadata.labels
+  template:
+    metadata:
+      # annotations:
+      #   kubectl.kubernetes.io/default-container:  myapp
+      labels:
+        app: podtemp-mongocont # has to match .spec.selector.matchLabels
+    spec:
+      # terminationGracePeriodSeconds: 10
+      containers:
+      - name: mongocont
+        image: mongo:6
+        ports:
+        - containerPort: 27017
+          name: mongo
+        volumeMounts:
+        - name: mongo-pers-storage # PVC defined name billow
+          mountPath: /data/db # defaault mongo storege dir.
+      volumes:
+        - name: mongo-pers-storage
+          persistentVolumeClaim:
+            claimName: mongo-pers-storage
+
+---
+
+# https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pers-storage
+  namespace: node-app-1
+spec:
+  # AKS: default,managed-premium
+  # GKE: standard
+  # EKS: gp2 (custom)
+  # Rook: rook-ceph-block,rook-ceph-fs
+  storageClassName: ""
+  volumeName: pv-vol-1
+  accessModes: 
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+  namespace: node-app-1
+spec:
+  clusterIP: None # R: VERY IMPORTANT – makes it a *Headless Service* Allows each pod to have its own DNS like: mongo-0.mongo-service.node-app-1.svc.cluster.local
+  selector:
+    app: podtemp-mongocont
+  # type: 
+  ports:
+  - name: mongo
+    protocol: TCP
+    port: 27017
+    targetPort: 27017
+    # nodePort: 30001
+---
+
