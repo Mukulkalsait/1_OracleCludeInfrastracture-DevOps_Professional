@@ -1,0 +1,53 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-ingress
+  namespace: frontend
+  # https://kubernetes.github.io/ingress-nginx/examples/rewrite/
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+  - host: kind.local
+    http:
+      paths:
+      - path: /httpbin(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: httpbin
+            port:
+              number: 80
+      - path: /whoami(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: whoami
+            port:
+              number: 80
+      - path: /nginx(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: nginxservice
+            port:
+              number: 80
+---
+# R: Regex explained
+#
+# () gropu
+# ()() $1 and $2
+# / = litrally "/" slash
+# | = or
+# $ = end of line
+# (/|$) = in $1 either / or end of line 
+# eg. /abcd(/|$) = either /abcd/ or /abcd
+# .* = anythign 
+# (.*) = anythign as group
+# eg. /abcd(/|$)(.*) 
+#   in $1 either /abcd/ or /abcd 
+#   in $2 /abcd(/whaterver) -> because /+word came 
+#                             so in $1 end of line is takenas $1
+#
