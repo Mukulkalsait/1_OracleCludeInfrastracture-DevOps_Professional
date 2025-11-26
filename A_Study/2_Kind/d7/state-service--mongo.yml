@@ -1,76 +1,122 @@
-# https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
-kind: StatefulSet
-apiVersion: apps/v1
-metadata:
-  name: mongo
-  namespace: node-app-1
+# B: ---------------------------------
+# 1. PersistentVolume
+# ------------------------------------
+
+kind: PersistentVolume
+apiVersion: v1
+metadata: 
+  name: pv-vol-1--mongodb #G:1
+  # labels:
+  #   app:
+  # namespace: node-app-1 #R: NO NEEDED |===| ⭐⭐⭐⭐⭐
 spec:
-  replicas: 1 # by default is 1
-  serviceName: mongo-service   # Y:  REQUIRED: Headless Service name for stable DNS
-  selector:
-    matchLabels:
-      app: podtemp-mongocont #Y: has to match .spec.template.metadata.labels
-  template:
-    metadata:
-      # annotations:
-      #   kubectl.kubernetes.io/default-container:  myapp
-      labels:
-        app: podtemp-mongocont # has to match .spec.selector.matchLabels
-    spec:
-      # terminationGracePeriodSeconds: 10
-      containers:
-      - name: mongocont
-        image: mongo:6
-        ports:
-        - containerPort: 27017
-          name: mongo
-        volumeMounts:
-        - name: mongo-pers-storage # PVC defined name billow
-          mountPath: /data/db # defaault mongo storege dir.
-      volumes:
-        - name: mongo-pers-storage
-          persistentVolumeClaim:
-            claimName: mongo-pers-storage
+  # storageClassName: pv-vol-1 R: not needed for VolumeName Bindign   ⭐⭐⭐⭐⭐
+  # volumeName:  ""  🟥
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /home/mukuldk/k8s-storage/pv-vol-1/
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+--- 
 
----
-
+# B: ---------------------------------
+# 2. PersistentVolumeClaim
+# ------------------------------------
 # https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongo-pers-storage
+  name: pvc-vol-1--mongodb   # G: 2
   namespace: node-app-1
+  labels:
+    app: pvc-vol-1
 spec:
   # AKS: default,managed-premium
   # GKE: standard
   # EKS: gp2 (custom)
   # Rook: rook-ceph-block,rook-ceph-fs
-  storageClassName: ""
-  volumeName: pv-vol-1
-  accessModes: 
-    - ReadWriteOnce
+  storageClassName: "" # 🟥
+  volumeName: pv-vol-1--mongodb # Y: |G=>1| 🟥
+  accessModes:
+  - ReadWriteOnce 
   resources:
     requests:
       storage: 1Gi
+---
+# B: ---------------------------------
+# 3. StatefulSet
+# ------------------------------------
+# https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: stateful--podtemp--mongocont
+  namespace: node-app-1
+spec:
+  replicas: 1 # by default is 1
+  # R: Limitations: IF WE HAVE TO REPLICATE THE POD + WE NEED VolumeClaimTemplete insted of 2.pvc   🔯🔯🔯🔯🔯
+  serviceName: "service--mongocont"  # Y: |G=>5|
+  selector:
+    matchLabels:
+      app: podtemp--mongocont  # Y: |G=>4|
+  template:
+    metadata:
+      # annotations:
+      #   kubectl.kubernetes.io/default-container:  mongocont
+      labels:
+        app: podtemp--mongocont # G: 4
+    spec:
+      securityContext:
+        runAsUser: 1000          # your host UID
+        runAsGroup: 1000         # your host GID  
+        fsGroup: 1000            # ← THIS makes the volume chown’d to 1000:1000
+      # terminationGracePeriodSeconds: 10
+      containers:
+      - name: mongocont
+        # image: mongo:6.0.5
+        image: mongo:4.4
+        ports:
+        - containerPort: 27017
+          name: mongo
+        # env:
+        # command:
+        # args:
+        volumeMounts:
+        - name: mongo-volume  # Y: |G=>3|
+          mountPath: /data/db
+      volumes:
+        - name: mongo-volume # G: 3
+          persistentVolumeClaim:
+            claimName: pvc-vol-1--mongodb  # Y: |G=>2|
 
 ---
 
+# B: ---------------------------------
+# 4. Service
+# ------------------------------------
 # https://kubernetes.io/docs/concepts/services-networking/service/
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo-service
+  name: service--mongocont # G: 5
   namespace: node-app-1
 spec:
   clusterIP: None # R: VERY IMPORTANT – makes it a *Headless Service* Allows each pod to have its own DNS like: mongo-0.mongo-service.node-app-1.svc.cluster.local
   selector:
-    app: podtemp-mongocont
+    app: podtemp--mongocont  # Y: |G=>4|
   # type: 
   ports:
-  - name: mongo
+  - name: mongodb
     protocol: TCP
     port: 27017
     targetPort: 27017
     # nodePort: 30001
 ---
 
+#IMP: Once deployed, your NodeJS backend can connect to Mongo via the service DNS: mongodb://service--mongocont.node-app-1.svc.cluster.local:27017/your-db-name 
+#(adjust as needed; add auth env vars to the StatefulSet if using credentials).
