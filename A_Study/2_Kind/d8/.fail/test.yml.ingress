@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-ingress
+  namespace: frontend
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2   # ← send everything after the prefix
+    nginx.ingress.kubernetes.io/use-regex: "true"     # ← enable regex matching
+spec:
+  rules:
+  - host: kind.local
+    http:
+      paths:
+      # Pattern: /httpbin(/|$)(.*)
+      # $1 = empty or /
+      # $2 = everything after /httpbin or /httpbin/
+      - path: /httpbin(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: httpbin
+            port:
+              number: 80
+
+      - path: /whoami(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: whoami
+            port:
+              number: 80
+
+      - path: /nginx(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: nginxservice
+            port:
+              number: 80
