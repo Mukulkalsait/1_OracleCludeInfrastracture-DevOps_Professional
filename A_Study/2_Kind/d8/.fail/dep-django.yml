@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes-app
+  namespace: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: notes-app
+  template:
+    metadata:
+      labels:
+        app: notes-app
+    spec:
+      containers:
+      - name: django
+        image: mukuldk/django-notes-app:v1
+        # ← THIS IS THE NUCLEAR OPTION
+        command: ["/bin/sh"]
+        args:
+          - -c
+          - |
+            cd /app/backend &&
+            echo "=== FORCING SQLITE ===" &&
+            export DATABASE_URL=sqlite:////tmp/db.sqlite3 &&
+            python manage.py migrate --noinput &&
+            python manage.py collectstatic --noinput --clear &&
+            echo "=== STARTING SERVER ON 0.0.0.0:8000 ===" &&
+            exec python manage.py runserver 0.0.0.0:8000
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notes-app-svc
+  namespace: frontend
+spec:
+  selector:
+    app: notes-app
+  ports:
+  - port: 8000
+    targetPort: 8000
