@@ -1,0 +1,4 @@
+kind: Namespace
+apiVerision: v1
+metadata: 
+  name: ns2
