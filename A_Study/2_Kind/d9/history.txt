@@ -1,0 +1,74 @@
+10132  kind   create cluster -n n9 --confing 1_ClusterCreate/2_kind_cluster1-3.yml
+10133  kind   create cluster -n n9 --confing=1_ClusterCreate/2_kind_cluster1-3.yml
+10134  kind   create cluster -n n9 --config 1_ClusterCreate/2_kind_cluster1-3.yml
+10135* k9s
+10136  kubectl get nodes
+10137  kubectl api-resources
+10138  ls
+10139  y
+10140  kubectl apply -f ./ns.yml
+10141  kubectl apply -f deployment.yml
+10142  kubectl delete -f deployment.yml
+10143  kubectl get pods -n ns1
+10144  kubectl describe pod -n ns1 deployment-1-797b7bcd98-h8hkh
+10145  kubectl delete -f deployment.yml
+10146  kubectl get pods -n ns1
+10147  kubectl apply -f deployment.yml
+10148  kubectl delete -f deployment.yml
+10149  kubectl apply -f deployment.yml
+10150  kubectl exec -n ns1 pods/deployment-1-59bc45cd88-frgvx sh 
+10151  kubectl exec -n ns1 pods/deployment-1-59bc45cd88-frgvx 
+10152  kubectl exec -it -n ns1 pods/deployment-1-59bc45cd88-frgvx 
+10153  kubectl exec -it -n ns1 pods/deployment-1-59bc45cd88-frgvx sh 
+10154  kubectl exec -it -n ns1 pods/deployment-1-59bc45cd88-frgvx -- sh
+10155* clear
+10156  lsl
+10157  podman get pods 
+10158  podman ps -a
+10159  podman ps
+10160  podman ps -q
+10161  for s $(podman ps -q);
+10162  for s $(podman ps -q); do
+10163  for s in $(podman ps -q); do\npodman exec -it $s sh 'apt update -y && apt upgrade -y'; done
+10164  for s in $(podman ps -q); do\npodman exec -it $s -- sh 'apt update -y && apt upgrade -y'; done
+10165  podman exec -it n9-control-plane
+10166  podman exec -it n9-control-plane sh
+10167  for a in $(podman ps -q); do \necho $s; done
+10168  for a in $(podman ps -q); do \npodman exec -it $s -- sh pwd ; done
+10169  for a in $(podman ps -q); do \npodman exec -it $s sh pwd ; done
+10170  for a in $(podman ps -q); do \npodman exec -it $s pwd ; done
+10171  for a in $(podman ps -q); do \npodman exec -it $s 'apt update -y && apt upgrade -y' ; done
+10172* lsl
+10173* nvim
+10174  for a in $(podman ps -q); \ndo \npodman exec -it $a -- sh 'pwd'; done
+10175  for a in $(podman ps -q); \ndo \npodman exec -it $a  sh 'pwd'; done
+10176  for a in $(podman ps -q); \ndo \npodman exec -it $a 'pwd'; done
+10177  for a in $(podman ps -q); \ndo \npodman exec -it $a 'apt update'; done
+10178  for a in $(podman ps -q); \ndo \npodman exec -it $a 'apk update'; done
+10179  for a in $(podman ps -q); \ndo \npodman exec -it $a apk update; done
+10180  for a in $(podman ps -q); \ndo \npodman exec -it $a sh 'apk update'; done
+10181  for a in $(podman ps -q); \ndo \npodman exec -it $a apt update ; done
+10182  for a in $(podman ps -q); \ndo \npodman exec -it $a apt update -y ; done
+10183  for a in $(podman ps -q); \ndo \npodman exec -it $a apt update -y;\n\n\npodman exec -it apt upgrade -y; \npodman exec -it apt install cowsay;\npodman exec -it '/usr/games/cowsay $(cat /etc/hostname)';\ndone
+10184  for a in $(podman ps -q); \ndo \npodman exec -it $a apt update -y;\n\n\npodman exec -it apt upgrade -y; \npodman exec -it apt install cowsay -y;\npodman exec -it '/usr/games/cowsay $(cat /etc/hostname)';\ndone
+10185  for a in $(podman ps -q); \ndo \npodman exec -it $a apt update -y;\npodman exec -it $a apt upgrade -y; \npodman exec -it $a apt install cowsay -y;\npodman exec -it $a '/usr/games/cowsay $(cat /etc/hostname)';\ndone
+10186  for a in $(podman ps -q); \ndo \npodman exec -it $a '/usr/games/cowsay $(cat /etc/hostname)';\ndone
+10187  podman exec -it n9-control-plane sh
+10188  podman exec -it n9-control-plane sh '/usr/games/cowthink motu paglu'
+10189  podman exec -it n9-control-plane -- sh '/usr/games/cowthink motu paglu'
+10190  podman exec -it n9-control-plane -- bash '/usr/games/cowthink motu paglu'
+10191  podman exec -it n9-control-plane '/usr/games/cowthink motu paglu'
+10192  podman exec -it n9-control-plane 'pwd'
+10193  podman exec -it n9-control-plane '/urs/games/cowsay hi'
+10194  podman exec -it n9-control-plane sh '/urs/games/cowsay hi'
+10195  podman exec -it n9-control-plane sh '/usr/games/cowsay hi'
+10196  podman exec -it n9-control-plane ls /usr/games/
+10197  podman exec -it n9-control-plane sh '/usr/games/cowsay'
+10198  podman exec -it n9-control-plane sh '/usr/games/cowsay hi'
+10199  podman exec -it n9-control-plane sh '/usr/games/cowsay (hi)'
+10200  podman exec -it n9-control-plane sh '/usr/games/cowsay $(pwd)'
+10201  podman exec -it n9-control-plane sh '/usr/games/cowthink hi'
+10202  podman exec -it n9-control-plane sh 
+10203  history
+10204  history 400
+10205  ls
