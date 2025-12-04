@@ -29,7 +29,12 @@ spec:
           # - Each init container must complete successfully before the next one starts.
       containers:
       - name: debain-cont
-        image: debain:latest
+        image: debian:latest
+        command: 
+            - sh 
+            - -c
+            - > 
+              while true ; do sleep 3600; done
         # imagePullPolicy: 
         resources:
           requests:
