@@ -1112,7 +1112,9 @@
  1106* \tfor c in $(podman ps -q); do podman exec $c apt install cowsay -y && podman exec $c cowsay $(cat /etc/hostname); done
  1107* \tfor c in $(podman ps -q); do podman exec $c apt install cowsay -y && podman exec $c cowsay \$(cat /etc/hostname); done
  1108* \tfor c in $(podman ps -q); do podman exec $c apt install cowsay -y && podman exec $c sh -c 'cowsay $(cat /etc/hostname)' ; done
+
  1109* for c in $(podman ps -q); do \npodman exec apt update -y \npodman exec apt upgrade -y \npodman exec apt install cowsay -y
+
  1110* for c in $(podman ps -q); do\npodman exec $c apt update -y\npodman exec $c apt upgrade -y\npodman exec $c apt insall cowsay\npodman exec sh -c 'PATH=$PATH:/usr/games/cowsay'
  1111* for c in $(podman ps -q); do \npodman exec $c apt update -y\npodman exec $c apt upgrade -y \npodman exec $c apt install cowsay \npodman exec $c sh -c 'PATH=$PATH:/usr/games/cowsay'\npodman exec $c sh -c 'cowsay $(cat /etc/hostname)'\ndone 
  1112* for c in $(podman ps -q); do \npodman exec $c apt update -y\npodman exec $c apt upgrade -y \npodman exec $c apt install cowsay \npodman exec $c sh -c 'PATH=$PATH:/usr/games/cowsay'\npodman exec $c sh -c 'echo $PATH'\npodman exec $c sh -c 'cowsay $(cat /etc/hostname)'\ndone 
@@ -1131,7 +1133,13 @@
  1125* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay;\ndone 
  1126* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay -y ;\ndone 
  1127* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y >> dev/null && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay -y ;\ndone 
- 1128* for x in $(podman ps -q);\ndo \npodman exec $x apt install cowsay -y > dev/null && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay -y ;\ndone 
+
+ 1128* 
+ for x in $(podman ps -q);
+ do 
+  podman exec $x apt install cowsay -y > dev/null && podman exec $x sh -c '/usr/games/cowsay $(echo /etc/hostname)' && podman exec $x apt purge cowsay -y ;
+  done 
+
  1129* podman inspect -f '{{.Name}}' p5-worker
 
  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
